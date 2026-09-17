@@ -1,16 +1,37 @@
-function entrar() {
+async function entrar() {
 
     const contraseña = document.getElementById("password").value;
-    const contraseñaCorrecta = "camila";
+    const error = document.getElementById("error");
 
-    if (contraseña === contraseñaCorrecta) {
+    try {
 
-        document.getElementById("login").classList.add("oculto");
-        document.getElementById("inicio").classList.remove("oculto");
+        const respuesta = await fetch("/auth", {
+            method: "POST",
 
-    } else {
+            headers: {
+                "Content-Type": "application/json"
+            },
 
-        document.getElementById("error").textContent =
-            "Contraseña incorrecta";
+            body: JSON.stringify({
+                password: contraseña
+            })
+        });
+
+        const resultado = await respuesta.json();
+
+        if (resultado.success) {
+
+            window.location.href = "inicio.html";
+
+        } else {
+
+            error.textContent = "Contraseña incorrecta";
+
+        }
+
+    } catch (e) {
+
+        error.textContent = "No se pudo comprobar la contraseña";
+
     }
 }
