@@ -81,7 +81,8 @@ export async function onRequest(context) {
         ruta === "/auth" ||
         ruta === "/logout" ||
         ruta === "/estilo.css" ||
-        ruta === "/script.js"
+        ruta === "/script.js" ||
+        ruta.startsWith("/imagenes/")
     ) {
         return context.next();
     }
