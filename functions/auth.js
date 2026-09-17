@@ -1,4 +1,5 @@
 async function crearFirma(texto, secreto) {
+
     const encoder = new TextEncoder();
 
     const key = await crypto.subtle.importKey(
@@ -23,6 +24,7 @@ async function crearFirma(texto, secreto) {
         .join("");
 }
 
+
 export async function onRequestPost(context) {
 
     const datos = await context.request.json();
@@ -44,14 +46,24 @@ export async function onRequestPost(context) {
         );
     }
 
+
     const contenido = "camila-authenticated";
+
 
     const firma = await crearFirma(
         contenido,
         context.env.PASSWORD
     );
 
-    const cookie = `__Host-camila_session=${contenido}.${firma}; Path=/; HttpOnly; Secure; SameSite=Lax`;
+
+    const cookie =
+        `__Host-camila_session=${contenido}.${firma}; ` +
+        `Max-Age=315360000; ` +
+        `Path=/; ` +
+        `HttpOnly; ` +
+        `Secure; ` +
+        `SameSite=Lax`;
+
 
     return new Response(
         JSON.stringify({

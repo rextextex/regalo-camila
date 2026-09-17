@@ -14,13 +14,13 @@
 
     <main class="pagina-botones">
 
-        <button 
+        <button
             class="boton-recuerdo boton-0509"
             onclick="window.location.href='recuerdo-0509.html'">
             05/09/2026
         </button>
 
-        <button 
+        <button
             class="boton-recuerdo boton-2109"
             onclick="window.location.href='recuerdo-2109.html'">
             21/09/2026
@@ -36,6 +36,26 @@
         <button class="boton-recuerdo">-----</button>
 
     </main>
+
+    <button
+        class="boton-cerrar"
+        onclick="cerrarSesion()">
+        Cerrar sesión
+    </button>
+
+    <script>
+
+        async function cerrarSesion() {
+
+            await fetch("/logout", {
+                method: "POST"
+            });
+
+            window.location.href = "/";
+
+        }
+
+    </script>
 
 </body>
 
