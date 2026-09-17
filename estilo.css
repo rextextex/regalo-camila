@@ -62,19 +62,6 @@ button:hover {
     margin-top: 15px;
 }
 
-.oculto {
-    display: none;
-}
-
-#inicio {
-    background: linear-gradient(135deg, #ffd1dc, #ffeef3);
-}
-
-#inicio h1 {
-    font-size: 40px;
-    text-align: center;
-    color: #b5174b;
-}
 /* =========================
    SEGUNDA PÁGINA
    ========================= */
@@ -95,17 +82,17 @@ button:hover {
 }
 
 .boton-recuerdo {
-    width: min(600px, 100%);
-    min-height: 90px;
+    width: 250px;
+    height: 50px;
 
     border: none;
-    border-radius: 18px;
+    border-radius: 8px;
 
     background: #e91e63;
-    color: white;
+    color: black;
 
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: normal;
 
     cursor: pointer;
 
@@ -122,7 +109,7 @@ button:hover {
 
 /* BOTÓN 05/09/2026 */
 .boton-0509 {
-    background-image: url("imagenes/b1.jpg");
+    background-image: url("imagenes/b1.png");
     background-size: cover;
     background-position: center;
     color: black;
@@ -130,7 +117,7 @@ button:hover {
 
 /* BOTÓN 21/09/2026 */
 .boton-2109 {
-    background-image: url("imagenes/b2.jpg");
+    background-image: url("imagenes/b2.png");
     background-size: cover;
     background-position: center;
     color: black;
@@ -140,7 +127,6 @@ button:hover {
 /* CELULAR */
 
 @media (max-width: 600px) {
-
     .pagina-botones {
         gap: 14px;
         padding: 25px 15px;
@@ -151,4 +137,25 @@ button:hover {
         border-radius: 15px;
         font-size: 20px;
     }
+}
+.boton-cerrar {
+    width: 250px;
+    height: 50px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #333;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.boton-cerrar:hover {
+    background: #111;
 }
