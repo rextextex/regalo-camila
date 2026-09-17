@@ -51,7 +51,7 @@ export async function onRequestPost(context) {
         context.env.PASSWORD
     );
 
-    const cookie = `__Host-camila_session=${contenido}.${firma}; Max-Age=315360000; Path=/; HttpOnly; Secure; SameSite=Lax`;
+    const cookie = `__Host-camila_session=${contenido}.${firma}; Path=/; HttpOnly; Secure; SameSite=Lax`;
 
     return new Response(
         JSON.stringify({

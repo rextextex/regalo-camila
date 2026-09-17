@@ -8,11 +8,6 @@
     <title>Para Camila</title>
 
     <link rel="stylesheet" href="estilo.css">
-    <style>
-        body {
-            background: red !important;
-        }
-</style>
 </head>
 
 <body>
@@ -40,27 +35,7 @@
         <button class="boton-recuerdo">-----</button>
         <button class="boton-recuerdo">-----</button>
 
-        <button
-            class="boton-cerrar"
-            onclick="cerrarSesion()">
-            Cerrar sesión
-        </button>
-
     </main>
-
-    <script>
-
-        async function cerrarSesion() {
-
-            await fetch("/logout", {
-                method: "POST"
-            });
-
-            window.location.href = "/";
-
-        }
-
-    </script>
 
 </body>
 

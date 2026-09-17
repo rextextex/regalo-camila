@@ -1,11 +1,15 @@
 async function entrar() {
 
-    const contraseña = document.getElementById("password").value;
-    const error = document.getElementById("error");
+    const contraseña =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("error");
 
     try {
 
         const respuesta = await fetch("/auth", {
+
             method: "POST",
 
             headers: {
@@ -25,13 +29,13 @@ async function entrar() {
 
         } else {
 
-            error.textContent = "Contraseña incorrecta";
-
+            error.textContent =
+                "Contraseña incorrecta";
         }
 
     } catch (e) {
 
-        error.textContent = "No se pudo comprobar la contraseña";
-
+        error.textContent =
+            "No se pudo comprobar la contraseña";
     }
 }

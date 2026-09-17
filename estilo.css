@@ -1,104 +1,140 @@
-async function crearFirma(texto, secreto) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    const encoder = new TextEncoder();
+body {
+    font-family: Arial, sans-serif;
+}
 
-    const key = await crypto.subtle.importKey(
-        "raw",
-        encoder.encode(secreto),
-        {
-            name: "HMAC",
-            hash: "SHA-256"
-        },
-        false,
-        ["sign"]
-    );
+.pantalla {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+}
 
-    const firma = await crypto.subtle.sign(
-        "HMAC",
-        key,
-        encoder.encode(texto)
-    );
+.cuadro {
+    text-align: center;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-    return Array.from(new Uint8Array(firma))
-        .map(byte => byte.toString(16).padStart(2, "0"))
-        .join("");
+.cuadro h1 {
+    margin-bottom: 15px;
+}
+
+.cuadro p {
+    margin-bottom: 20px;
+}
+
+input {
+    display: block;
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #e91e63;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c2185b;
+}
+
+#error {
+    color: red;
+    margin-top: 15px;
+}
+
+/* =========================
+   SEGUNDA PÁGINA
+   ========================= */
+
+.pagina-botones {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 35px 20px;
+
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+}
+
+.boton-recuerdo {
+    width: 250px;
+    height: 50px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #e91e63;
+    color: black;
+
+    font-size: 16px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton-recuerdo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
-async function comprobarSesion(request, secreto) {
+/* BOTÓN 05/09/2026 */
+.boton-0509 {
+    background-image: url("imagenes/b1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
 
-    const cookies = request.headers.get("Cookie") || "";
-
-    const encontrado = cookies
-        .split(";")
-        .map(cookie => cookie.trim())
-        .find(cookie =>
-            cookie.startsWith("__Host-camila_session=")
-        );
-
-    if (!encontrado) {
-        return false;
-    }
-
-    const valor = encontrado.split("=")[1];
-
-    if (!valor) {
-        return false;
-    }
-
-    const partes = valor.split(".");
-
-    if (partes.length !== 2) {
-        return false;
-    }
-
-    const contenido = partes[0];
-    const firma = partes[1];
-
-    if (contenido !== "camila-authenticated") {
-        return false;
-    }
-
-    const firmaCorrecta = await crearFirma(
-        contenido,
-        secreto
-    );
-
-    return firma === firmaCorrecta;
+/* BOTÓN 21/09/2026 */
+.boton-2109 {
+    background-image: url("imagenes/b2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
 }
 
 
-export async function onRequest(context) {
+/* CELULAR */
 
-    const url = new URL(context.request.url);
-
-    const ruta = url.pathname;
-
-    // Rutas públicas
-    if (
-        ruta === "/" ||
-        ruta === "/index.html" ||
-        ruta === "/auth" ||
-        ruta === "/logout" ||
-        ruta === "/estilo.css" ||
-        ruta === "/script.js" ||
-        ruta.startsWith("/imagenes/")
-    ) {
-        return context.next();
+@media (max-width: 600px) {
+    .pagina-botones {
+        gap: 14px;
+        padding: 25px 15px;
     }
 
-    const sesionValida = await comprobarSesion(
-        context.request,
-        context.env.PASSWORD
-    );
-
-    if (!sesionValida) {
-
-        return Response.redirect(
-            new URL("/", context.request.url),
-            302
-        );
+    .boton-recuerdo {
+        min-height: 75px;
+        border-radius: 15px;
+        font-size: 20px;
     }
-
-    return context.next();
 }
