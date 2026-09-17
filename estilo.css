@@ -75,3 +75,80 @@ button:hover {
     text-align: center;
     color: #b5174b;
 }
+/* =========================
+   SEGUNDA PÁGINA
+   ========================= */
+
+.pagina-botones {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 35px 20px;
+
+    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+}
+
+.boton-recuerdo {
+    width: min(600px, 100%);
+    min-height: 90px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: #e91e63;
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton-recuerdo:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* BOTÓN 05/09/2026 */
+.boton-0509 {
+    background-image: url("imagenes/b1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+
+/* BOTÓN 21/09/2026 */
+.boton-2109 {
+    background-image: url("imagenes/b2.jpg");
+    background-size: cover;
+    background-position: center;
+    color: black;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .pagina-botones {
+        gap: 14px;
+        padding: 25px 15px;
+    }
+
+    .boton-recuerdo {
+        min-height: 75px;
+        border-radius: 15px;
+        font-size: 20px;
+    }
+}
