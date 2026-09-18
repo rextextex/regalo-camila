@@ -246,3 +246,639 @@ button:hover {
     }
 
 }
+/* =========================================================
+   RECUERDO 21/09/2026
+   GABRIELA - FLOR MÁS BELLA DE MI PRIMAVERA
+   ========================================================= */
+
+
+/* =========================
+   FONDO GENERAL
+   ========================= */
+
+.pagina-2109 {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(255, 248, 210, 0.88),
+            rgba(255, 239, 170, 0.88)
+        );
+
+    color: #4a3512;
+}
+
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.encabezado-2109 {
+    text-align: center;
+
+    padding: 60px 20px 35px;
+}
+
+
+.encabezado-2109 h1 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 58px;
+
+    font-weight: 400;
+
+    color: #8a6410;
+
+    line-height: 1.2;
+
+    text-shadow:
+        1px 2px 3px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 20px;
+}
+
+
+.decoracion-flores {
+    font-size: 30px;
+
+    letter-spacing: 8px;
+}
+
+
+/* =========================
+   CONTENIDO
+   ========================= */
+
+.contenido-2109 {
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 20px 40px 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(500px, 750px)
+        220px;
+
+    justify-content: center;
+
+    align-items: start;
+
+    gap: 45px;
+}
+
+
+/* =========================
+   ESPACIOS PARA FOTOS
+   ========================= */
+
+.espacio-foto {
+    width: 220px;
+
+    height: 280px;
+
+    border: 3px dashed rgba(138, 100, 16, 0.45);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    color: rgba(74, 53, 18, 0.55);
+
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   POEMA
+   ========================= */
+
+.poema-2109 {
+    background: rgba(255, 255, 255, 0.72);
+
+    padding: 45px 50px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 70, 10, 0.15);
+
+    border: 1px solid rgba(180, 140, 40, 0.25);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+.poema-2109 p {
+    margin-bottom: 30px;
+}
+
+
+.poema-2109 p:last-child {
+    margin-bottom: 0;
+}
+
+
+.final-2109 {
+    font-weight: 600;
+
+    font-size: 25px;
+
+    color: #76520b;
+}
+
+
+/* =========================
+   ANIMACIÓN
+   ========================= */
+
+.animacion-2109 {
+    text-align: center;
+
+    padding: 40px 20px 80px;
+}
+
+
+.animacion-2109 h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    color: #8a6410;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================
+   ESCENA
+   ========================= */
+
+.escena {
+    position: relative;
+
+    width: 600px;
+
+    height: 300px;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    border-bottom: 5px solid #8f721c;
+}
+
+
+/* =========================
+   PERSONAS
+   ========================= */
+
+.persona {
+    position: absolute;
+
+    bottom: 5px;
+
+    width: 100px;
+
+    height: 220px;
+}
+
+
+.chico {
+    left: 130px;
+
+    animation: acercarChico 4s ease-in-out infinite alternate;
+}
+
+
+.chica {
+    right: 130px;
+}
+
+
+/* =========================
+   CABEZAS
+   ========================= */
+
+.persona .cabeza {
+    position: absolute;
+
+    top: 0;
+
+    left: 30px;
+
+    width: 55px;
+
+    height: 55px;
+
+    background: #f1c7a5;
+
+    border-radius: 50%;
+
+    border: 2px solid #b77d58;
+}
+
+
+/* =========================
+   CABELLO DE LA CHICA
+   ========================= */
+
+.cabello {
+    position: absolute;
+
+    top: -5px;
+
+    left: 23px;
+
+    width: 70px;
+
+    height: 75px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    background: #4a2c20;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   CUERPOS
+   ========================= */
+
+.persona .cuerpo {
+    position: absolute;
+
+    top: 55px;
+
+    left: 20px;
+
+    width: 75px;
+
+    height: 105px;
+
+    border-radius: 30px 30px 10px 10px;
+
+    background: #5577a0;
+}
+
+
+.chica .cuerpo {
+    background: #d88ca8;
+
+    border-radius: 35px 35px 15px 15px;
+
+    height: 115px;
+}
+
+
+/* =========================
+   BRAZOS
+   ========================= */
+
+.brazo {
+    position: absolute;
+
+    width: 65px;
+
+    height: 15px;
+
+    border-radius: 10px;
+
+    background: #f1c7a5;
+
+    top: 75px;
+}
+
+
+.brazo-chico {
+    left: 70px;
+
+    transform: rotate(15deg);
+
+    transform-origin: left center;
+
+    animation: entregarFlores 4s ease-in-out infinite alternate;
+}
+
+
+.brazo-chica {
+    left: -30px;
+
+    transform: rotate(-15deg);
+
+    transform-origin: right center;
+}
+
+
+/* =========================
+   PIERNAS
+   ========================= */
+
+.pierna {
+    position: absolute;
+
+    top: 155px;
+
+    width: 18px;
+
+    height: 65px;
+
+    background: #333;
+
+    border-radius: 10px;
+}
+
+
+.pierna-izquierda {
+    left: 35px;
+}
+
+
+.pierna-derecha {
+    left: 65px;
+}
+
+
+/* =========================
+   RAMO
+   ========================= */
+
+.ramo {
+    position: absolute;
+
+    left: 50%;
+
+    top: 120px;
+
+    transform: translateX(-50%);
+
+    font-size: 38px;
+
+    z-index: 5;
+
+    animation: ramoFlotando 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMACIONES
+   ========================= */
+
+@keyframes acercarChico {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(45px);
+    }
+
+}
+
+
+@keyframes entregarFlores {
+
+    0% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
+
+}
+
+
+@keyframes ramoFlotando {
+
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-8px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TEXTO FINAL
+   ========================= */
+
+.texto-final-animacion {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 38px;
+
+    color: #8a6410;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   BOTÓN VOLVER
+   ========================= */
+
+.volver-2109 {
+    text-align: center;
+
+    padding-bottom: 50px;
+}
+
+
+.volver-2109 button {
+    width: 150px;
+
+    height: 50px;
+
+    padding: 0;
+
+    background-color: #e91e63;
+
+    color: black;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.volver-2109 button:hover {
+    background-color: #c2185b;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .contenido-2109 {
+
+        grid-template-columns: 1fr;
+
+        max-width: 750px;
+
+        padding: 20px;
+    }
+
+
+    .espacio-foto {
+
+        width: 200px;
+
+        height: 250px;
+
+        margin: 0 auto;
+    }
+
+
+    .foto-izquierda {
+        order: 1;
+    }
+
+
+    .poema-2109 {
+        order: 2;
+    }
+
+
+    .foto-derecha {
+        order: 3;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .encabezado-2109 {
+
+        padding: 45px 15px 25px;
+    }
+
+
+    .encabezado-2109 h1 {
+
+        font-size: 42px;
+    }
+
+
+    .decoracion-flores {
+
+        font-size: 24px;
+
+        letter-spacing: 4px;
+    }
+
+
+    .poema-2109 {
+
+        padding: 30px 20px;
+
+        font-size: 20px;
+
+        line-height: 1.5;
+
+        border-radius: 18px;
+    }
+
+
+    .poema-2109 p {
+
+        margin-bottom: 25px;
+    }
+
+
+    .final-2109 {
+
+        font-size: 22px;
+    }
+
+
+    .animacion-2109 h2 {
+
+        font-size: 34px;
+    }
+
+
+    .escena {
+
+        width: 360px;
+
+        height: 270px;
+    }
+
+
+    .chico {
+
+        left: 45px;
+    }
+
+
+    .chica {
+
+        right: 45px;
+    }
+
+
+    .ramo {
+
+        font-size: 30px;
+    }
+
+
+    .texto-final-animacion {
+
+        font-size: 32px;
+    }
+
+}
