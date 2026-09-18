@@ -8,11 +8,9 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -20,32 +18,25 @@ body {
 
 
 /* =========================================================
-   PÁGINA DE INICIO - index.html
+   PÁGINA DE INICIO
    ========================================================= */
 
 .pantalla {
-
     width: 100%;
-
     min-height: 100vh;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffd6e7,
-            #fff0f5
-        );
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5
+    );
 }
 
-
 .cuadro {
-
     text-align: center;
 
     background: white;
@@ -58,21 +49,15 @@ body {
         0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-
 .cuadro h1 {
-
     margin-bottom: 15px;
 }
 
-
 .cuadro p {
-
     margin-bottom: 20px;
 }
 
-
 input {
-
     display: block;
 
     width: 250px;
@@ -88,9 +73,7 @@ input {
     font-size: 16px;
 }
 
-
 button {
-
     padding: 12px 30px;
 
     border: none;
@@ -106,55 +89,43 @@ button {
     cursor: pointer;
 }
 
-
 button:hover {
-
     background-color: #c2185b;
 }
 
-
 #error {
-
     color: red;
 
     margin-top: 15px;
 }
 
 
-
 /* =========================================================
-   SEGUNDA PÁGINA - inicio.html
+   INICIO.HTML
    ========================================================= */
 
 .pagina-botones {
-
     min-height: 100vh;
 
     width: 100%;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
 
     gap: 18px;
 
     padding: 35px 20px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffd6e7,
-            #fff0f5
-        );
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5
+    );
 }
 
-
 .boton-recuerdo {
-
     width: 250px;
-
     height: 50px;
 
     border: none;
@@ -167,8 +138,6 @@ button:hover {
 
     font-size: 16px;
 
-    font-weight: normal;
-
     cursor: pointer;
 
     box-shadow:
@@ -179,73 +148,50 @@ button:hover {
         box-shadow 0.2s;
 }
 
-
 .boton-recuerdo:hover {
-
     transform: scale(1.02);
 
     box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-
-/* =========================================================
-   BOTÓN 05/09/2026
-   ========================================================= */
-
 .boton-0509 {
-
     background-image:
         url("imagenes/b1.png");
 
     background-size: cover;
-
     background-position: center;
 
     color: black;
 }
 
-
-
-/* =========================================================
-   BOTÓN 21/09/2026
-   ========================================================= */
-
 .boton-2109 {
-
     background-image:
         url("imagenes/b2.png");
 
     background-size: cover;
-
     background-position: center;
 
     color: black;
 }
 
 
-
 /* =========================================================
-   BOTÓN CERRAR SESIÓN
+   CERRAR SESIÓN
    ========================================================= */
 
 .boton-cerrar {
-
     position: fixed;
 
     top: 20px;
-
     right: 20px;
 
     width: 150px;
-
     height: 50px;
 
     padding: 0;
 
     border: none;
-
     border-radius: 8px;
 
     background: #e91e63;
@@ -254,40 +200,22 @@ button:hover {
 
     font-size: 16px;
 
-    font-weight: normal;
-
     cursor: pointer;
 
     box-shadow:
         0 6px 15px rgba(0, 0, 0, 0.15);
-
-    transition:
-        transform 0.2s,
-        box-shadow 0.2s;
 }
-
 
 .boton-cerrar:hover {
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.2);
+    background-color: #c2185b;
 }
 
 
-
 /* =========================================================
-   RECUERDO 21/09/2026
-   ========================================================= */
-
-
-/* =========================================================
-   FONDO GENERAL
+   RECUERDO 21/09
    ========================================================= */
 
 .pagina-2109 {
-
     min-height: 100vh;
 
     position: relative;
@@ -304,19 +232,9 @@ button:hover {
 }
 
 
-
 /* =========================================================
    FLORES LATERALES
    ========================================================= */
-
-/*
-   La imagen de las flores ocupa toda la página.
-
-   Está colocada detrás de todo el contenido.
-
-   Las flores nacen visualmente desde la parte inferior
-   y suben por ambos lados.
-*/
 
 .pagina-2109::before {
 
@@ -325,11 +243,9 @@ button:hover {
     position: absolute;
 
     top: 0;
-
     left: 0;
 
     width: 100%;
-
     height: 100%;
 
     background-image:
@@ -340,11 +256,6 @@ button:hover {
     background-position:
         center bottom;
 
-    /*
-       La imagen se adapta a toda la altura
-       de la página.
-    */
-
     background-size:
         100% 100%;
 
@@ -354,9 +265,8 @@ button:hover {
 }
 
 
-
 /* =========================================================
-   CAPA DEL CONTENIDO
+   CONTENIDO SOBRE LAS FLORES
    ========================================================= */
 
 .encabezado-2109,
@@ -370,7 +280,6 @@ button:hover {
 }
 
 
-
 /* =========================================================
    TÍTULO
    ========================================================= */
@@ -382,7 +291,6 @@ button:hover {
     padding:
         60px 20px 35px;
 }
-
 
 .encabezado-2109 h1 {
 
@@ -404,7 +312,6 @@ button:hover {
     margin-bottom: 20px;
 }
 
-
 .decoracion-flores {
 
     font-size: 30px;
@@ -413,97 +320,43 @@ button:hover {
 }
 
 
-
 /* =========================================================
-   CONTENIDO PRINCIPAL
+   POEMA
    ========================================================= */
 
 .contenido-2109 {
 
     width: 100%;
 
-    max-width: 1500px;
+    max-width: 1050px;
 
     margin: 0 auto;
 
     padding:
-        20px 40px 60px;
-
-    display: grid;
-
-    grid-template-columns:
-        220px
-        minmax(500px, 750px)
-        220px;
-
-    justify-content: center;
-
-    align-items: start;
-
-    gap: 45px;
-}
-
-
-
-/* =========================================================
-   ESPACIOS PARA FOTOS
-   ========================================================= */
-
-.espacio-foto {
-
-    width: 220px;
-
-    height: 280px;
-
-    border:
-        3px dashed
-        rgba(138, 100, 16, 0.45);
-
-    border-radius: 18px;
+        20px 30px 70px;
 
     display: flex;
 
     justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 22px;
-
-    color:
-        rgba(74, 53, 18, 0.55);
-
-    /*
-       Transparente para que las flores
-       puedan verse por detrás.
-    */
-
-    background:
-        rgba(255, 255, 255, 0.30);
-
-    position: relative;
-
-    z-index: 6;
 }
 
 
-
-/* =========================================================
-   CUADRO DEL POEMA
-   ========================================================= */
-
 .poema-2109 {
+
+    width: 820px;
+
+    /*
+       Antes era aproximadamente 750px.
+       Lo ensanchamos solo un poco.
+    */
+
+    max-width: 100%;
 
     background:
         rgba(255, 255, 255, 0.78);
 
     padding:
-        35px 40px;
+        38px 45px;
 
     border-radius: 25px;
 
@@ -524,10 +377,6 @@ button:hover {
     line-height: 1.55;
 
     text-align: center;
-
-    position: relative;
-
-    z-index: 6;
 }
 
 
@@ -553,9 +402,8 @@ button:hover {
 }
 
 
-
 /* =========================================================
-   VIDEO
+   SECCIÓN VIDEO
    ========================================================= */
 
 .video-seccion-2109 {
@@ -563,7 +411,7 @@ button:hover {
     text-align: center;
 
     padding:
-        20px 20px 70px;
+        10px 30px 70px;
 }
 
 
@@ -579,9 +427,75 @@ button:hover {
 
     color: #8a6410;
 
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
+
+/* =========================================================
+   VIDEO + FOTOS
+   ========================================================= */
+
+.video-con-fotos {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 35px;
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   FOTOS
+   ========================================================= */
+
+.espacio-foto {
+
+    width: 220px;
+
+    height: 280px;
+
+    flex-shrink: 0;
+
+    border:
+        3px dashed
+        rgba(138, 100, 16, 0.45);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 22px;
+
+    color:
+        rgba(74, 53, 18, 0.55);
+
+    background:
+        rgba(255, 255, 255, 0.30);
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
 
 .video-2109 {
 
@@ -589,11 +503,13 @@ button:hover {
 
     width: 500px;
 
-    max-width: 90%;
+    max-width: 100%;
 
     height: auto;
 
-    margin: 0 auto;
+    flex-shrink: 1;
+
+    margin: 0;
 
     border-radius: 20px;
 
@@ -602,6 +518,10 @@ button:hover {
         rgba(100, 70, 10, 0.20);
 }
 
+
+/* =========================================================
+   TEXTO DEL VIDEO
+   ========================================================= */
 
 .texto-video-2109 {
 
@@ -615,7 +535,6 @@ button:hover {
 
     margin-top: 25px;
 }
-
 
 
 /* =========================================================
@@ -672,111 +591,37 @@ button:hover {
 }
 
 
-
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
+    .video-con-fotos {
 
-    .contenido-2109 {
-
-        grid-template-columns: 1fr;
-
-        max-width: 750px;
-
-        padding: 20px;
+        gap: 20px;
     }
-
 
     .espacio-foto {
 
-        width: 200px;
+        width: 180px;
 
         height: 250px;
-
-        margin: 0 auto;
     }
 
+    .video-2109 {
 
-    .foto-izquierda {
-
-        order: 1;
-    }
-
-
-    .poema-2109 {
-
-        order: 2;
-    }
-
-
-    .foto-derecha {
-
-        order: 3;
-    }
-
-
-    /*
-       En tablet las flores se mantienen
-       en los extremos.
-    */
-
-    .pagina-2109::before {
-
-        background-size:
-            100% 100%;
+        width: 430px;
     }
 
 }
 
 
-
 /* =========================================================
-   CELULAR - PÁGINA PRINCIPAL
+   CELULAR
    ========================================================= */
 
-@media (max-width: 600px) {
-
-
-    .pagina-botones {
-
-        gap: 14px;
-
-        padding:
-            25px 15px;
-    }
-
-
-    .boton-recuerdo {
-
-        min-height: 75px;
-
-        border-radius: 15px;
-
-        font-size: 20px;
-    }
-
-
-    .boton-cerrar {
-
-        top: 15px;
-
-        right: 15px;
-
-        width: 130px;
-
-        height: 45px;
-
-        font-size: 14px;
-    }
-
-
-
-    /* =====================================================
-       TÍTULO 21/09
-       ===================================================== */
+@media (max-width: 700px) {
 
     .encabezado-2109 {
 
@@ -799,12 +644,18 @@ button:hover {
     }
 
 
+    /* POEMA */
 
-    /* =====================================================
-       POEMA
-       ===================================================== */
+    .contenido-2109 {
+
+        padding:
+            20px 15px 50px;
+    }
+
 
     .poema-2109 {
+
+        width: 100%;
 
         padding:
             30px 20px;
@@ -829,10 +680,7 @@ button:hover {
     }
 
 
-
-    /* =====================================================
-       VIDEO
-       ===================================================== */
+    /* VIDEO + FOTOS */
 
     .video-seccion-2109 {
 
@@ -847,6 +695,22 @@ button:hover {
     }
 
 
+    .video-con-fotos {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .espacio-foto {
+
+        width: 190px;
+
+        height: 230px;
+    }
+
+
     .video-2109 {
 
         width: 100%;
@@ -854,6 +718,20 @@ button:hover {
         max-width: 400px;
 
         border-radius: 15px;
+
+        order: 2;
+    }
+
+
+    .foto-izquierda {
+
+        order: 1;
+    }
+
+
+    .foto-derecha {
+
+        order: 3;
     }
 
 
@@ -863,10 +741,7 @@ button:hover {
     }
 
 
-
-    /* =====================================================
-       FLORES EN CELULAR
-       ===================================================== */
+    /* FLORES */
 
     .pagina-2109::before {
 
