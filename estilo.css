@@ -1,3 +1,7 @@
+/* =========================================================
+   ESTILO GENERAL
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +13,9 @@ body {
 }
 
 
-/* =========================
-   PÁGINA DE INICIO
-   ========================= */
+/* =========================================================
+   PÁGINA DE INICIO - index.html
+   ========================================================= */
 
 .pantalla {
     width: 100%;
@@ -21,8 +25,13 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5
+    );
 }
+
 
 .cuadro {
     text-align: center;
@@ -33,16 +42,20 @@ body {
 
     border-radius: 20px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 .cuadro h1 {
     margin-bottom: 15px;
 }
 
+
 .cuadro p {
     margin-bottom: 20px;
 }
+
 
 input {
     display: block;
@@ -60,6 +73,7 @@ input {
     font-size: 16px;
 }
 
+
 button {
     padding: 12px 30px;
 
@@ -76,9 +90,17 @@ button {
     cursor: pointer;
 }
 
+
+/*
+   IMPORTANTE:
+   Se utiliza background-color y NO background
+   para no borrar las imágenes de los botones.
+*/
+
 button:hover {
     background-color: #c2185b;
 }
+
 
 #error {
     color: red;
@@ -87,9 +109,9 @@ button:hover {
 }
 
 
-/* =========================
-   SEGUNDA PÁGINA
-   ========================= */
+/* =========================================================
+   SEGUNDA PÁGINA - inicio.html
+   ========================================================= */
 
 .pagina-botones {
     min-height: 100vh;
@@ -106,8 +128,13 @@ button:hover {
 
     padding: 35px 20px;
 
-    background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f5
+    );
 }
+
 
 .boton-recuerdo {
     width: 250px;
@@ -128,21 +155,26 @@ button:hover {
 
     cursor: pointer;
 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.15);
 
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
+
 
 .boton-recuerdo:hover {
     transform: scale(1.02);
 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 
-/* =========================
+/* =========================================================
    BOTÓN 05/09/2026
-   ========================= */
+   ========================================================= */
 
 .boton-0509 {
     background-image: url("imagenes/b1.png");
@@ -155,9 +187,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
    BOTÓN 21/09/2026
-   ========================= */
+   ========================================================= */
 
 .boton-2109 {
     background-image: url("imagenes/b2.png");
@@ -170,9 +202,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
    BOTÓN CERRAR SESIÓN
-   ========================= */
+   ========================================================= */
 
 .boton-cerrar {
     position: fixed;
@@ -201,59 +233,31 @@ button:hover {
 
     cursor: pointer;
 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.15);
 
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
 }
+
 
 .boton-cerrar:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.2);
 }
 
 
-/* =========================
-   CELULAR
-   ========================= */
-
-@media (max-width: 600px) {
-
-    .pagina-botones {
-        gap: 14px;
-
-        padding: 25px 15px;
-    }
-
-    .boton-recuerdo {
-        min-height: 75px;
-
-        border-radius: 15px;
-
-        font-size: 20px;
-    }
-
-    .boton-cerrar {
-        top: 15px;
-
-        right: 15px;
-
-        width: 130px;
-
-        height: 45px;
-
-        font-size: 14px;
-    }
-
-}
 /* =========================================================
    RECUERDO 21/09/2026
-   GABRIELA - FLOR MÁS BELLA DE MI PRIMAVERA
+   GABRIELA, LA FLOR MÁS BELLA DE MI PRIMAVERA
    ========================================================= */
 
 
 /* =========================
-   FONDO GENERAL
+   FONDO
    ========================= */
 
 .pagina-2109 {
@@ -270,7 +274,7 @@ button:hover {
 
 
 /* =========================
-   ENCABEZADO
+   TÍTULO
    ========================= */
 
 .encabezado-2109 {
@@ -306,7 +310,7 @@ button:hover {
 
 
 /* =========================
-   CONTENIDO
+   CONTENIDO PRINCIPAL
    ========================= */
 
 .contenido-2109 {
@@ -365,13 +369,17 @@ button:hover {
 
 
 /* =========================
-   POEMA
+   CUADRO DEL POEMA
    ========================= */
 
 .poema-2109 {
     background: rgba(255, 255, 255, 0.72);
 
-    padding: 45px 50px;
+    /*
+       Un poco más delgado que la versión anterior
+    */
+
+    padding: 35px 40px;
 
     border-radius: 25px;
 
@@ -409,18 +417,18 @@ button:hover {
 }
 
 
-/* =========================
-   ANIMACIÓN
-   ========================= */
+/* =========================================================
+   VIDEO
+   ========================================================= */
 
-.animacion-2109 {
+.video-seccion-2109 {
     text-align: center;
 
-    padding: 40px 20px 80px;
+    padding: 20px 20px 70px;
 }
 
 
-.animacion-2109 h2 {
+.video-seccion-2109 h2 {
     font-family: "Great Vibes", cursive;
 
     font-size: 42px;
@@ -429,273 +437,29 @@ button:hover {
 
     color: #8a6410;
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 
-/* =========================
-   ESCENA
-   ========================= */
+.video-2109 {
+    display: block;
 
-.escena {
-    position: relative;
+    width: 500px;
 
-    width: 600px;
+    max-width: 90%;
 
-    height: 300px;
-
-    max-width: 100%;
+    height: auto;
 
     margin: 0 auto;
 
-    border-bottom: 5px solid #8f721c;
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 70, 10, 0.20);
 }
 
 
-/* =========================
-   PERSONAS
-   ========================= */
-
-.persona {
-    position: absolute;
-
-    bottom: 5px;
-
-    width: 100px;
-
-    height: 220px;
-}
-
-
-.chico {
-    left: 130px;
-
-    animation: acercarChico 4s ease-in-out infinite alternate;
-}
-
-
-.chica {
-    right: 130px;
-}
-
-
-/* =========================
-   CABEZAS
-   ========================= */
-
-.persona .cabeza {
-    position: absolute;
-
-    top: 0;
-
-    left: 30px;
-
-    width: 55px;
-
-    height: 55px;
-
-    background: #f1c7a5;
-
-    border-radius: 50%;
-
-    border: 2px solid #b77d58;
-}
-
-
-/* =========================
-   CABELLO DE LA CHICA
-   ========================= */
-
-.cabello {
-    position: absolute;
-
-    top: -5px;
-
-    left: 23px;
-
-    width: 70px;
-
-    height: 75px;
-
-    border-radius: 50% 50% 45% 45%;
-
-    background: #4a2c20;
-
-    z-index: -1;
-}
-
-
-/* =========================
-   CUERPOS
-   ========================= */
-
-.persona .cuerpo {
-    position: absolute;
-
-    top: 55px;
-
-    left: 20px;
-
-    width: 75px;
-
-    height: 105px;
-
-    border-radius: 30px 30px 10px 10px;
-
-    background: #5577a0;
-}
-
-
-.chica .cuerpo {
-    background: #d88ca8;
-
-    border-radius: 35px 35px 15px 15px;
-
-    height: 115px;
-}
-
-
-/* =========================
-   BRAZOS
-   ========================= */
-
-.brazo {
-    position: absolute;
-
-    width: 65px;
-
-    height: 15px;
-
-    border-radius: 10px;
-
-    background: #f1c7a5;
-
-    top: 75px;
-}
-
-
-.brazo-chico {
-    left: 70px;
-
-    transform: rotate(15deg);
-
-    transform-origin: left center;
-
-    animation: entregarFlores 4s ease-in-out infinite alternate;
-}
-
-
-.brazo-chica {
-    left: -30px;
-
-    transform: rotate(-15deg);
-
-    transform-origin: right center;
-}
-
-
-/* =========================
-   PIERNAS
-   ========================= */
-
-.pierna {
-    position: absolute;
-
-    top: 155px;
-
-    width: 18px;
-
-    height: 65px;
-
-    background: #333;
-
-    border-radius: 10px;
-}
-
-
-.pierna-izquierda {
-    left: 35px;
-}
-
-
-.pierna-derecha {
-    left: 65px;
-}
-
-
-/* =========================
-   RAMO
-   ========================= */
-
-.ramo {
-    position: absolute;
-
-    left: 50%;
-
-    top: 120px;
-
-    transform: translateX(-50%);
-
-    font-size: 38px;
-
-    z-index: 5;
-
-    animation: ramoFlotando 2s ease-in-out infinite;
-}
-
-
-/* =========================
-   ANIMACIONES
-   ========================= */
-
-@keyframes acercarChico {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(45px);
-    }
-
-}
-
-
-@keyframes entregarFlores {
-
-    0% {
-        transform: rotate(15deg);
-    }
-
-    100% {
-        transform: rotate(2deg);
-    }
-
-}
-
-
-@keyframes ramoFlotando {
-
-    0% {
-        transform: translateX(-50%) translateY(0);
-    }
-
-    50% {
-        transform: translateX(-50%) translateY(-8px);
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(0);
-    }
-
-}
-
-
-/* =========================
-   TEXTO FINAL
-   ========================= */
-
-.texto-final-animacion {
+.texto-video-2109 {
     font-family: "Great Vibes", cursive;
 
     font-size: 38px;
@@ -706,9 +470,9 @@ button:hover {
 }
 
 
-/* =========================
+/* =========================================================
    BOTÓN VOLVER
-   ========================= */
+   ========================================================= */
 
 .volver-2109 {
     text-align: center;
@@ -756,7 +520,44 @@ button:hover {
 
 
 /* =========================================================
-   CELULAR
+   CELULAR - INICIO
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .pagina-botones {
+        gap: 14px;
+
+        padding: 25px 15px;
+    }
+
+
+    .boton-recuerdo {
+        min-height: 75px;
+
+        border-radius: 15px;
+
+        font-size: 20px;
+    }
+
+
+    .boton-cerrar {
+        top: 15px;
+
+        right: 15px;
+
+        width: 130px;
+
+        height: 45px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET - RECUERDO 21/09
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -797,6 +598,10 @@ button:hover {
 
 }
 
+
+/* =========================================================
+   CELULAR - RECUERDO 21/09
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -844,39 +649,29 @@ button:hover {
     }
 
 
-    .animacion-2109 h2 {
+    .video-seccion-2109 {
+
+        padding: 10px 15px 50px;
+    }
+
+
+    .video-seccion-2109 h2 {
 
         font-size: 34px;
     }
 
 
-    .escena {
+    .video-2109 {
 
-        width: 360px;
+        width: 100%;
 
-        height: 270px;
+        max-width: 400px;
+
+        border-radius: 15px;
     }
 
 
-    .chico {
-
-        left: 45px;
-    }
-
-
-    .chica {
-
-        right: 45px;
-    }
-
-
-    .ramo {
-
-        font-size: 30px;
-    }
-
-
-    .texto-final-animacion {
+    .texto-video-2109 {
 
         font-size: 32px;
     }
