@@ -260,20 +260,53 @@ button:hover {
    FLORES LATERALES
    ========================================================= */
 
-.flores-laterales {
-    position: fixed;
+/* =========================================================
+   FLORES LATERALES - FONDO AL FINAL DE LA PÁGINA
+   ========================================================= */
 
-    inset: 0;
+.pagina-2109::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
 
     width: 100%;
 
-    height: 100vh;
+    height: 100%;
+
+    background-image:
+        url("imagenes/flores-laterales.png");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        center bottom;
+
+    background-size:
+        100% 100%;
 
     pointer-events: none;
 
     z-index: 1;
+}
 
-    overflow: hidden;
+
+/* =========================================================
+   CONTENIDO POR ENCIMA DE LAS FLORES
+   ========================================================= */
+
+.encabezado-2109,
+.contenido-2109,
+.video-seccion-2109,
+.volver-2109 {
+
+    position: relative;
+
+    z-index: 5;
 }
 
 
