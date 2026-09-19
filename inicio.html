@@ -12,21 +12,17 @@
 
     <title>Fechas importantes</title>
 
-
     <style>
 
-        /* =====================================================
-           CONFIGURACIÓN GENERAL
-           ===================================================== */
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
 
-        html {
+        html,
+        body {
+            margin: 0;
+            padding: 0;
             min-height: 100%;
         }
 
@@ -35,10 +31,6 @@
 
             min-height: 100vh;
 
-            font-family: Arial, sans-serif;
-
-            overflow-x: hidden;
-
             background-image:
                 url("imagenes/fondo-inicio.jpg");
 
@@ -46,22 +38,58 @@
 
             background-position: center;
 
-            background-repeat: no-repeat;
-
             background-attachment: fixed;
 
+            font-family: Arial, sans-serif;
+
+            overflow-x: hidden;
         }
 
 
-        /* =====================================================
-           CONTENEDOR PRINCIPAL
-           ===================================================== */
+        /* =========================
+           BOTÓN CERRAR SESIÓN
+           ========================= */
 
-        .inicio-prueba {
+        .cerrar-sesion {
+
+            position: fixed;
+
+            top: 20px;
+            right: 20px;
+
+            padding: 10px 18px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #b83b5e;
+
+            color: white;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            z-index: 1000;
+
+            transition: 0.2s;
+        }
+
+
+        .cerrar-sesion:hover {
+
+            background: #962f4d;
+        }
+
+
+        /* =========================
+           CONTENEDOR PRINCIPAL
+           ========================= */
+
+        .contenedor {
 
             min-height: 100vh;
-
-            position: relative;
 
             display: flex;
 
@@ -69,14 +97,155 @@
 
             align-items: center;
 
-            padding: 80px 20px;
+            position: relative;
 
+            padding: 50px 20px;
         }
 
 
-        /* =====================================================
-           COLUMNA CENTRAL
-           ===================================================== */
+        /* =========================
+           FOTOS LATERALES
+           ========================= */
+
+        .fotos-laterales {
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            width: 36%;
+
+            pointer-events: none;
+        }
+
+
+        .fotos-izquierda {
+
+            left: 0;
+
+            transform: translateX(-520px);
+        }
+
+
+        .fotos-derecha {
+
+            right: 0;
+
+            transform: translateX(520px);
+        }
+
+
+        .foto {
+
+            position: absolute;
+
+            width: 230px;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.25);
+
+            background: white;
+        }
+
+
+        /* =========================
+           FOTOS IZQUIERDA
+           ========================= */
+
+        .fotos-izquierda .foto-1 {
+
+            top: 4%;
+
+            right: 17%;
+
+            transform: rotate(8deg);
+        }
+
+
+        .fotos-izquierda .foto-2 {
+
+            top: 28%;
+
+            right: -2%;
+
+            transform: rotate(-6deg);
+        }
+
+
+        .fotos-izquierda .foto-3 {
+
+            top: 53%;
+
+            right: 17%;
+
+            transform: rotate(5deg);
+        }
+
+
+        .fotos-izquierda .foto-4 {
+
+            top: 77%;
+
+            right: -2%;
+
+            transform: rotate(-8deg);
+        }
+
+
+        /* =========================
+           FOTOS DERECHA
+           ========================= */
+
+        .fotos-derecha .foto-1 {
+
+            top: 4%;
+
+            left: 17%;
+
+            transform: rotate(-8deg);
+        }
+
+
+        .fotos-derecha .foto-2 {
+
+            top: 28%;
+
+            left: 2%;
+
+            transform: rotate(6deg);
+        }
+
+
+        .fotos-derecha .foto-3 {
+
+            top: 53%;
+
+            left: 17%;
+
+            transform: rotate(-5deg);
+        }
+
+
+        .fotos-derecha .foto-4 {
+
+            top: 77%;
+
+            left: 2%;
+
+            transform: rotate(8deg);
+        }
+
+
+        /* =========================
+           ZONA CENTRAL
+           ========================= */
 
         .zona-central {
 
@@ -84,22 +253,19 @@
 
             z-index: 10;
 
+            width: 400px;
+
             display: flex;
 
             flex-direction: column;
 
             align-items: center;
-
-            gap: 18px;
-
-            width: 400px;
-
         }
 
 
-        /* =====================================================
+        /* =========================
            TÍTULO
-           ===================================================== */
+           ========================= */
 
         .titulo {
 
@@ -114,24 +280,20 @@
             flex-direction: column;
 
             align-items: center;
-
         }
 
 
         .titulo h1 {
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+            margin: 0;
+
+            color: #6d2037;
 
             font-size: 48px;
 
-            line-height: 1.1;
-
             font-weight: bold;
 
-            color: #6d2037;
+            line-height: 1.1;
 
             white-space: nowrap;
 
@@ -140,561 +302,254 @@
                  2px -2px 0 white,
                 -2px  2px 0 white,
                  2px  2px 0 white,
-                 0 3px 6px rgba(0,0,0,0.20);
-
+                 0 0 4px white;
         }
 
 
-        /* =====================================================
-           SUBTÍTULO
-           ===================================================== */
-
         .titulo p {
 
-            margin-top: 7px;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 25px;
+            margin: 8px 0 0;
 
             color: #c84d6b;
 
-            font-style: italic;
+            font-size: 25px;
 
             font-weight: bold;
+
+            font-style: italic;
+
+            line-height: 1.2;
 
             white-space: nowrap;
 
             text-shadow:
-                -1px -1px 0 white,
-                 1px -1px 0 white,
-                -1px  1px 0 white,
-                 1px  1px 0 white,
-                 0 2px 4px rgba(0,0,0,0.15);
-
+                -2px -2px 0 white,
+                 2px -2px 0 white,
+                -2px  2px 0 white,
+                 2px  2px 0 white,
+                 0 0 4px white;
         }
 
 
-        /* =====================================================
+        /* =========================
            BOTONES
-           ===================================================== */
+           ========================= */
 
-        .boton-recuerdo {
+        .botones {
 
-            width: 330px;
+            display: flex;
 
-            height: 70px;
+            flex-direction: column;
 
-            border: none;
+            align-items: center;
 
-            border-radius: 12px;
+            gap: 12px;
 
-            font-size: 21px;
-
-            color: black;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 8px 20px
-                rgba(0, 0, 0, 0.18);
-
-            transition:
-                transform 0.2s,
-                box-shadow 0.2s;
-
+            margin-top: 25px;
         }
 
 
-        .boton-recuerdo:hover {
+        .boton-fecha {
 
-            transform: scale(1.04);
-
-            box-shadow:
-                0 12px 25px
-                rgba(0, 0, 0, 0.25);
-
-        }
-
-
-        /* =====================================================
-           BOTÓN 05/09
-           ===================================================== */
-
-        .boton-0509 {
-
-            background-image:
-                url("imagenes/b1.png");
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: black;
-
-        }
-
-
-        /* =====================================================
-           BOTÓN 21/09
-           ===================================================== */
-
-        .boton-2109 {
-
-            background-image:
-                url("imagenes/b2.png");
-
-            background-size: cover;
-
-            background-position: center;
-
-            color: black;
-
-        }
-
-
-        /* =====================================================
-           BOTONES VACÍOS
-           ===================================================== */
-
-        .boton-vacio {
-
-            background:
-                rgba(255, 255, 255, 0.78);
-
-        }
-
-
-        /* =====================================================
-           CONTENEDORES LATERALES
-           ===================================================== */
-
-        .fotos-laterales {
-
-            position: absolute;
-
-            top: 0;
-
-            bottom: 0;
-
-            width: 36%;
-
-            z-index: 3;
-
-            pointer-events: none;
-
-        }
-
-
-        /* =====================================================
-           FOTOS
-           ===================================================== */
-
-        .foto {
-
-            position: absolute;
-
-            width: 230px;
-
-            aspect-ratio: 1 / 1;
-
-            padding: 7px;
-
-            background: white;
-
-            border-radius: 8px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 10px 25px
-                rgba(0, 0, 0, 0.20);
-
-        }
-
-
-        .foto img {
-
-            width: 100%;
-
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-
-            border-radius: 4px;
-
-        }
-
-
-        /* =====================================================
-           FOTOS IZQUIERDA
-           INCLINACIÓN INVERTIDA
-           ===================================================== */
-
-        /* =====================================================
-   FOTOS IZQUIERDA
-   ===================================================== */
-
-        .fotos-izquierda {
-            transform: translateX(-520px);
-        }
-
-        /* =========================
-        FOTOS IZQUIERDA
-        ========================= */
-
-        .fotos-izquierda .foto-1 {
-            top: 4%;
-            right: 17%;
-            transform: rotate(8deg);
-        }
-
-        .fotos-izquierda .foto-2 {
-            top: 28%;
-            right: -2%;
-            transform: rotate(-6deg);
-        }
-
-        .fotos-izquierda .foto-3 {
-            top: 53%;
-            right: 17%;
-            transform: rotate(5deg);
-        }
-
-        .fotos-izquierda .foto-4 {
-            top: 77%;
-            right: -2%;
-            transform: rotate(-8deg);
-        }
-
-
-        /* =========================
-        COLUMNA DERECHA
-        ========================= */
-
-        .fotos-derecha {
-            transform: translateX(520px);
-        }
-
-
-        /* =========================
-        FOTOS DERECHA
-        ========================= */
-
-        .fotos-derecha .foto-1 {
-            top: 4%;
-            left: 17%;
-            transform: rotate(-8deg);
-        }
-
-        .fotos-derecha .foto-2 {
-            top: 28%;
-            left: 2%;
-            transform: rotate(6deg);
-        }
-
-        .fotos-derecha .foto-3 {
-            top: 53%;
-            left: 17%;
-            transform: rotate(-5deg);
-        }
-
-        .fotos-derecha .foto-4 {
-            top: 77%;
-            left: 2%;
-            transform: rotate(8deg);
-        }
-
-        /* =====================================================
-           FRASE FINAL
-           ===================================================== */
-
-        .frase-final {
-
-            width: 560px;
-
-            max-width: 100%;
-
-            margin-top: 22px;
-
-            text-align: center;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 26px;
-
-            line-height: 1.35;
-
-            font-style: italic;
-
-            font-weight: bold;
-
-            color: #7a1738;
-
-            text-shadow:
-                -1px -1px 0 white,
-                 1px -1px 0 white,
-                -1px  1px 0 white,
-                 1px  1px 0 white,
-                 0 2px 4px rgba(0,0,0,0.12);
-
-        }
-
-
-        /* =====================================================
-           BOTÓN CERRAR SESIÓN
-           ===================================================== */
-
-        .boton-cerrar {
-
-            position: fixed;
-
-            top: 20px;
-
-            right: 20px;
-
-            z-index: 20;
-
-            width: 150px;
+            width: 250px;
 
             height: 50px;
 
             border: none;
 
-            border-radius: 10px;
+            border-radius: 8px;
 
-            background: #b83b5e;
+            background-size: cover;
 
-            color: white;
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            color: black;
 
             font-size: 16px;
 
-            font-weight: bold;
+            font-weight: normal;
 
             cursor: pointer;
 
             box-shadow:
-                0 6px 15px
-                rgba(0, 0, 0, 0.20);
+                0 3px 8px rgba(0, 0, 0, 0.15);
 
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
         }
 
 
-        .boton-cerrar:hover {
+        .boton-fecha:hover {
 
-            background-color: #962f4d;
+            transform: scale(1.03);
 
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.25);
         }
 
 
-        /* =====================================================
-           PANTALLAS GRANDES / MEDIANAS
-           ===================================================== */
+        .boton-1 {
 
-        @media (max-width: 1250px) {
+            background-image:
+                url("imagenes/b1.png");
+        }
+
+
+        .boton-2 {
+
+            background-image:
+                url("imagenes/b2.png");
+        }
+
+
+        .boton-vacio {
+
+            background: rgba(255, 255, 255, 0.75);
+
+            cursor: default;
+        }
+
+
+        .boton-vacio:hover {
+
+            transform: none;
+
+            box-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           FRASE FINAL
+           ========================= */
+
+        .frase-final {
+
+            margin-top: 30px;
+
+            width: 600px;
+
+            max-width: 90vw;
+
+            text-align: center;
+
+            color: #7a1738;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            line-height: 1.35;
+
+            text-shadow:
+                -2px -2px 0 white,
+                 2px -2px 0 white,
+                -2px  2px 0 white,
+                 2px  2px 0 white,
+                 0 0 4px white;
+        }
+
+
+        /* =========================
+           TABLET
+           ========================= */
+
+        @media (max-width: 1200px) {
 
             .foto {
 
-                width: 190px;
+                width: 140px;
+            }
 
+
+            .fotos-izquierda {
+
+                transform: translateX(-350px);
+            }
+
+
+            .fotos-derecha {
+
+                transform: translateX(350px);
+            }
+
+
+            .titulo h1 {
+
+                font-size: 40px;
+            }
+
+
+            .titulo p {
+
+                font-size: 22px;
+            }
+        }
+
+
+        /* =========================
+           CELULAR
+           ========================= */
+
+        @media (max-width: 700px) {
+
+            body {
+
+                background-attachment: scroll;
+            }
+
+
+            .contenedor {
+
+                padding:
+                    80px 15px 40px;
             }
 
 
             .fotos-laterales {
 
                 width: 30%;
-
             }
 
 
-            .fotos-izquierda .foto-1,
-            .fotos-izquierda .foto-3 {
+            .fotos-izquierda {
 
-                right: 2%;
-
+                transform: translateX(-80px);
             }
 
 
-            .fotos-izquierda .foto-2,
-            .fotos-izquierda .foto-4 {
+            .fotos-derecha {
 
-                right: 12%;
-
-            }
-
-
-            .fotos-derecha .foto-1,
-            .fotos-derecha .foto-3 {
-
-                left: 2%;
-
-            }
-
-
-            .fotos-derecha .foto-2,
-            .fotos-derecha .foto-4 {
-
-                left: 12%;
-
-            }
-
-
-            .titulo h1 {
-
-                font-size: 42px;
-
-            }
-
-
-            .titulo p {
-
-                font-size: 22px;
-
-            }
-
-
-            .frase-final {
-
-                width: 500px;
-
-                font-size: 24px;
-
-            }
-
-        }
-
-
-        /* =====================================================
-           TABLET
-           ===================================================== */
-
-        @media (max-width: 900px) {
-
-            .inicio-prueba {
-
-                padding:
-                    80px 10px;
-
-            }
-
-
-            .zona-central {
-
-                width: 330px;
-
-            }
-
-
-            .titulo h1 {
-
-                font-size: 34px;
-
-            }
-
-
-            .titulo p {
-
-                font-size: 19px;
-
-            }
-
-
-            .boton-recuerdo {
-
-                width: 280px;
-
-                height: 62px;
-
-                font-size: 19px;
-
+                transform: translateX(80px);
             }
 
 
             .foto {
 
-                width: 140px;
+                width: 100px;
 
-            }
-
-
-            .fotos-laterales {
-
-                width: 24%;
-
-            }
-
-
-            .fotos-izquierda .foto-2,
-            .fotos-izquierda .foto-4 {
-
-                right: 4%;
-
-            }
-
-
-            .fotos-derecha .foto-2,
-            .fotos-derecha .foto-4 {
-
-                left: 4%;
-
-            }
-
-
-            .frase-final {
-
-                width: 430px;
-
-                font-size: 22px;
-
-            }
-
-        }
-
-
-        /* =====================================================
-           CELULAR
-           ===================================================== */
-
-        @media (max-width: 700px) {
-
-            .inicio-prueba {
-
-                align-items: flex-start;
-
-                padding:
-                    100px 15px 50px;
-
-            }
-
-
-            .zona-central {
-
-                width: 100%;
-
-            }
-
-
-            .titulo {
-
-                margin-bottom: 10px;
-
+                border-width: 5px;
             }
 
 
             .titulo h1 {
 
-                font-size: 27px;
+                font-size: 30px;
 
                 white-space: nowrap;
-
             }
 
 
@@ -703,138 +558,43 @@
                 font-size: 17px;
 
                 white-space: nowrap;
-
             }
 
 
-            .boton-recuerdo {
+            .zona-central {
 
-                width: 90%;
+                width: 100%;
 
-                max-width: 330px;
-
-                height: 65px;
-
+                max-width: 400px;
             }
 
 
-            .fotos-laterales {
+            .boton-fecha {
 
-                width: 25%;
+                width: 220px;
 
-            }
-
-
-            .foto {
-
-                width: 100px;
-
-                padding: 4px;
-
-            }
-
-
-            .fotos-izquierda .foto-1 {
-
-                top: 10%;
-
-                right: 2%;
-
-            }
-
-
-            .fotos-izquierda .foto-2 {
-
-                top: 33%;
-
-                right: 7%;
-
-            }
-
-
-            .fotos-izquierda .foto-3 {
-
-                top: 56%;
-
-                right: 2%;
-
-            }
-
-
-            .fotos-izquierda .foto-4 {
-
-                top: 79%;
-
-                right: 7%;
-
-            }
-
-
-            .fotos-derecha .foto-1 {
-
-                top: 10%;
-
-                left: 2%;
-
-            }
-
-
-            .fotos-derecha .foto-2 {
-
-                top: 33%;
-
-                left: 7%;
-
-            }
-
-
-            .fotos-derecha .foto-3 {
-
-                top: 56%;
-
-                left: 2%;
-
-            }
-
-
-            .fotos-derecha .foto-4 {
-
-                top: 79%;
-
-                left: 7%;
-
+                height: 48px;
             }
 
 
             .frase-final {
 
-                width: 95%;
+                font-size: 19px;
 
-                font-size: 20px;
-
-                line-height: 1.4;
-
-                margin-top: 20px;
-
-                white-space: normal;
-
+                width: 90vw;
             }
 
 
-            .boton-cerrar {
+            .cerrar-sesion {
 
-                width: 125px;
+                top: 10px;
 
-                height: 45px;
+                right: 10px;
 
-                top: 15px;
+                font-size: 12px;
 
-                right: 15px;
-
-                font-size: 14px;
-
+                padding: 8px 12px;
             }
-
         }
 
     </style>
@@ -845,69 +605,60 @@
 <body>
 
 
-    <main class="inicio-prueba">
+    <!-- =========================
+         BOTÓN CERRAR SESIÓN
+         ========================= -->
+
+    <button
+        class="cerrar-sesion"
+        onclick="cerrarSesion()"
+    >
+        Cerrar sesión
+    </button>
 
 
-        <!-- =================================================
-             FOTOS IZQUIERDA — R2
-             ================================================= -->
+    <main class="contenedor">
+
+
+        <!-- =========================
+             FOTOS IZQUIERDA
+             ========================= -->
 
         <div class="fotos-laterales fotos-izquierda">
 
+            <img
+                class="foto foto-1"
+                src="/fotos/inicio/foto-prueba-1.jpg"
+                alt="Foto 1"
+            >
 
-            <div class="foto foto-1">
+            <img
+                class="foto foto-2"
+                src="/fotos/inicio/foto-prueba-2.jpg"
+                alt="Foto 2"
+            >
 
-                <img
-                    src="/fotos/inicio/foto1.jpg"
-                    alt="Foto 1"
-                >
+            <img
+                class="foto foto-3"
+                src="/fotos/inicio/foto-prueba-3.jpg"
+                alt="Foto 3"
+            >
 
-            </div>
-
-
-            <div class="foto foto-2">
-
-                <img
-                    src="/fotos/inicio/foto2.jpg"
-                    alt="Foto 2"
-                >
-
-            </div>
-
-
-            <div class="foto foto-3">
-
-                <img
-                    src="/fotos/inicio/foto3.jpg"
-                    alt="Foto 3"
-                >
-
-            </div>
-
-
-            <div class="foto foto-4">
-
-                <img
-                    src="/fotos/inicio/foto4.jpg"
-                    alt="Foto 4"
-                >
-
-            </div>
-
+            <img
+                class="foto foto-4"
+                src="/fotos/inicio/foto-prueba-4.jpg"
+                alt="Foto 4"
+            >
 
         </div>
 
 
-        <!-- =================================================
-             COLUMNA CENTRAL
-             ================================================= -->
+        <!-- =========================
+             ZONA CENTRAL
+             ========================= -->
 
-        <div class="zona-central">
+        <section class="zona-central">
 
-
-            <!-- =================================================
-                 TÍTULO
-                 ================================================= -->
 
             <div class="titulo">
 
@@ -922,153 +673,114 @@
             </div>
 
 
-            <!-- =================================================
-                 BOTÓN 05/09
-                 ================================================= -->
-
-            <button
-                class="boton-recuerdo boton-0509"
-                onclick="window.location.href='recuerdo-0509.html'"
-            >
-                05/09/2026
-            </button>
+            <div class="botones">
 
 
-            <!-- =================================================
-                 BOTÓN 21/09
-                 ================================================= -->
-
-            <button
-                class="boton-recuerdo boton-2109"
-                onclick="window.location.href='recuerdo-2109.html'"
-            >
-                21/09/2026
-            </button>
+                <a
+                    href="recuerdo-0509.html"
+                    class="boton-fecha boton-1"
+                >
+                    05/09/2026
+                </a>
 
 
-            <!-- =================================================
-                 BOTONES FUTUROS
-                 ================================================= -->
-
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
-
-
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <a
+                    href="recuerdo-2109.html"
+                    class="boton-fecha boton-2"
+                >
+                    21/09/2026
+                </a>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <button class="boton-recuerdo boton-vacio">
-                -----
-            </button>
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
 
-            <!-- =================================================
-                 FRASE FINAL
-                 ================================================= -->
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
 
-            <p class="frase-final">
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+            </div>
+
+
+            <div class="frase-final">
 
                 “Porque cualquier momento se vuelve especial
                 <br>
                 y hermoso cuando estoy contigo.”
 
-            </p>
+            </div>
 
 
-        </div>
+        </section>
 
 
-        <!-- =================================================
-             FOTOS DERECHA — R2
-             ================================================= -->
+        <!-- =========================
+             FOTOS DERECHA
+             ========================= -->
 
         <div class="fotos-laterales fotos-derecha">
 
+            <img
+                class="foto foto-1"
+                src="/fotos/inicio/foto-prueba-5.jpg"
+                alt="Foto 5"
+            >
 
-            <div class="foto foto-1">
+            <img
+                class="foto foto-2"
+                src="/fotos/inicio/foto-prueba-6.jpg"
+                alt="Foto 6"
+            >
 
-                <img
-                    src="/fotos/inicio/foto5.jpg"
-                    alt="Foto 5"
-                >
+            <img
+                class="foto foto-3"
+                src="/fotos/inicio/foto-prueba-7.jpg"
+                alt="Foto 7"
+            >
 
-            </div>
-
-
-            <div class="foto foto-2">
-
-                <img
-                    src="/fotos/inicio/foto6.jpg"
-                    alt="Foto 6"
-                >
-
-            </div>
-
-
-            <div class="foto foto-3">
-
-                <img
-                    src="/fotos/inicio/foto7.jpg"
-                    alt="Foto 7"
-                >
-
-            </div>
-
-
-            <div class="foto foto-4">
-
-                <img
-                    src="/fotos/inicio/foto8.jpg"
-                    alt="Foto 8"
-                >
-
-            </div>
-
+            <img
+                class="foto foto-4"
+                src="/fotos/inicio/foto-prueba-8.jpg"
+                alt="Foto 8"
+            >
 
         </div>
 
 
     </main>
-
-
-    <!-- =====================================================
-         CERRAR SESIÓN
-         ===================================================== -->
-
-    <button
-        class="boton-cerrar"
-        onclick="cerrarSesion()"
-    >
-        Cerrar sesión
-    </button>
 
 
     <script>
@@ -1088,9 +800,7 @@
 
                 window.location.href =
                     "index.html";
-
             }
-
         }
 
     </script>
