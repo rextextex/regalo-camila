@@ -1,233 +1,969 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Fechas importantes</title>
 
-    <link rel="stylesheet" href="estilo.css">
-
     <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background-image: url("imagenes/fondo-inicio.jpg");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-        }
 
-        .cerrar-sesion {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 18px;
-            background-color: #8f4a5c;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .pagina-botones {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 40px 20px;
+        * {
             box-sizing: border-box;
         }
 
-        .titulo {
-            text-align: center;
-            margin-bottom: 25px;
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
         }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background-image:
+                url("imagenes/fondo-inicio.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            font-family: Arial, sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BOTÓN CERRAR SESIÓN
+           ========================= */
+
+        .cerrar-sesion {
+
+            position: fixed;
+
+            top: 20px;
+            right: 20px;
+
+            padding: 10px 18px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #b83b5e;
+
+            color: white;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            z-index: 1000;
+
+            transition: 0.2s;
+        }
+
+
+        .cerrar-sesion:hover {
+
+            background: #962f4d;
+        }
+
+
+        /* =========================
+           CONTENEDOR PRINCIPAL
+           ========================= */
+
+        .contenedor {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            padding: 50px 20px;
+        }
+
+
+        /* =========================
+           FOTOS LATERALES
+           ========================= */
+
+        .fotos-laterales {
+
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+
+            width: 36%;
+
+            pointer-events: none;
+        }
+
+
+        .fotos-izquierda {
+
+            left: 0;
+
+            transform: translateX(-150px);
+        }
+
+
+        .fotos-derecha {
+
+            right: 0;
+
+            transform: translateX(150px);
+        }
+
+
+        .foto {
+
+            position: absolute;
+
+            width: 225px;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            border: 7px solid white;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.25);
+
+            background: white;
+        }
+
+
+        /* =========================
+           FOTOS IZQUIERDA
+           ========================= */
+
+        .fotos-izquierda .foto-1 {
+
+            top: 1%;
+
+            right: 10%;
+
+            transform: rotate(8deg);
+        }
+
+
+        .fotos-izquierda .foto-2 {
+
+            top: 26%;
+
+            right: -8%;
+
+            transform: rotate(-6deg);
+        }
+
+
+        .fotos-izquierda .foto-3 {
+
+            top: 53%;
+
+            right: 10%;
+
+            transform: rotate(5deg);
+        }
+
+
+        .fotos-izquierda .foto-4 {
+
+            top: 80%;
+
+            right: -8%;
+
+            transform: rotate(-8deg);
+        }
+
+
+        /* =========================
+           FOTOS DERECHA
+           ========================= */
+
+        .fotos-derecha .foto-1 {
+
+            top: 1%;
+
+            left: 10%;
+
+            transform: rotate(-8deg);
+        }
+
+
+        .fotos-derecha .foto-2 {
+
+            top: 26%;
+
+            left: -8%;
+
+            transform: rotate(6deg);
+        }
+
+
+        .fotos-derecha .foto-3 {
+
+            top: 53%;
+
+            left: 10%;
+
+            transform: rotate(-5deg);
+        }
+
+
+        .fotos-derecha .foto-4 {
+
+            top: 80%;
+
+            left: -8%;
+
+            transform: rotate(8deg);
+        }
+
+
+        /* =========================
+           ZONA CENTRAL
+           ========================= */
+
+        .zona-central {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 450px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+
+        /* =========================
+           TÍTULO
+           ========================= */
+
+        .titulo {
+
+            text-align: center;
+
+            margin-bottom: 8px;
+
+            width: 100%;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
 
         .titulo h1 {
+
             margin: 0;
-            font-size: 36px;
-            color: #000;
+
+            color: #6d2037;
+
+            font-size: 48px;
+
+            font-weight: bold;
+
+            line-height: 1.1;
+
+            white-space: nowrap;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                -2px -2px 0 white,
+                 2px -2px 0 white,
+                -2px  2px 0 white,
+                 2px  2px 0 white,
+                 0 0 4px white;
         }
+
 
         .titulo p {
-            margin-top: 8px;
-            font-size: 20px;
-            color: #000;
+
+            margin: 8px 0 0;
+
+            color: #c84d6b;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            line-height: 1.2;
+
+            white-space: nowrap;
+
+            text-shadow:
+                -2px -2px 0 white,
+                 2px -2px 0 white,
+                -2px  2px 0 white,
+                 2px  2px 0 white,
+                 0 0 4px white;
         }
+
+
+        /* =========================
+           BOTONES
+           ========================= */
 
         .botones {
+
             display: flex;
+
             flex-direction: column;
+
             align-items: center;
-            gap: 12px;
-            width: 100%;
-            max-width: 1200px;
+
+            gap: 14px;
+
+            margin-top: 25px;
         }
 
+
         .boton-fecha {
+
             width: 320px;
+
             height: 65px;
+
+            border: none;
+
             border-radius: 10px;
+
             background-size: cover;
+
             background-position: center;
+
             background-repeat: no-repeat;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
             text-decoration: none;
-            color: black;
-            font-size: 20px;
-            font-weight: bold;
 
-            box-sizing: border-box;
+            color: black;
+
+            font-size: 19px;
+
+            font-weight: normal;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.15);
+
+            transition:
+                transform 0.2s,
+                box-shadow 0.2s;
+
+            position: relative;
+
+            overflow: hidden;
         }
+
+
+        .boton-fecha:hover {
+
+            transform: scale(1.03);
+
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* =========================
+           IMÁGENES DE LOS BOTONES
+           ========================= */
 
         .boton-1 {
-            background-image: url("imagenes/b1.png");
+
+            background-image:
+                url("imagenes/b1.png");
         }
+
 
         .boton-2 {
-            background-image: url("imagenes/b2.png");
+
+            background-image:
+                url("imagenes/b2.png");
         }
+
 
         .boton-3 {
-            background-image: url("imagenes/b3.png");
+
+            background-image:
+                url("imagenes/b3.png");
         }
+
 
         .boton-vacio {
-            background-color: rgba(255, 255, 255, 0.45);
+
+            background: rgba(255, 255, 255, 0.75);
+
+            cursor: default;
         }
+
+
+        .boton-vacio:hover {
+
+            transform: none;
+
+            box-shadow:
+                0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+           TEXTO DE LAS FECHAS
+           ========================= */
+
+        .boton-fecha .fecha {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transform: translateX(0);
+
+            opacity: 1;
+
+            transition:
+                transform 0.4s ease,
+                opacity 0.2s ease;
+        }
+
+
+        /* =========================
+           TEXTO AL PASAR EL MOUSE
+           ========================= */
+
+        .boton-fecha .texto-hover {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: black;
+
+            font-size: 19px;
+
+            font-weight: normal;
+
+            transform: translateX(-100%);
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        /* =========================
+           ANIMACIÓN
+           ========================= */
+
+        .boton-fecha:hover .fecha {
+
+            transform: translateX(100%);
+
+            opacity: 0;
+        }
+
+
+        .boton-fecha:hover .texto-hover {
+
+            transform: translateX(0);
+        }
+
+
+        /* =========================
+           FRASE FINAL
+           ========================= */
 
         .frase-final {
-            margin-top: 25px;
+
+            margin-top: 30px;
+
+            width: 650px;
+
+            max-width: 90vw;
+
             text-align: center;
-            font-size: 18px;
-            color: #000;
+
+            color: #7a1738;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            font-style: italic;
+
+            line-height: 1.35;
+
+            text-shadow:
+                -2px -2px 0 white,
+                 2px -2px 0 white,
+                -2px  2px 0 white,
+                 2px  2px 0 white,
+                 0 0 4px white;
         }
 
+
+        /* =========================
+           TABLET
+           ========================= */
+
         @media (max-width: 1200px) {
+
+            .foto {
+
+                width: 145px;
+            }
+
+
+            .fotos-izquierda {
+
+                transform: translateX(-100px);
+            }
+
+
+            .fotos-derecha {
+
+                transform: translateX(100px);
+            }
+
+
+            .titulo h1 {
+
+                font-size: 40px;
+            }
+
+
+            .titulo p {
+
+                font-size: 22px;
+            }
+
+
             .boton-fecha {
+
                 width: 280px;
+
                 height: 60px;
             }
         }
 
+
+        /* =========================
+           CELULAR
+           ========================= */
+
         @media (max-width: 700px) {
-            .boton-fecha {
-                width: 250px;
-                height: 55px;
-                font-size: 17px;
+
+            body {
+
+                background-attachment: scroll;
             }
+
+
+            .contenedor {
+
+                padding:
+                    80px 15px 40px;
+            }
+
+
+            .fotos-laterales {
+
+                width: 30%;
+            }
+
+
+            .fotos-izquierda {
+
+                transform: translateX(-55px);
+            }
+
+
+            .fotos-derecha {
+
+                transform: translateX(55px);
+            }
+
+
+            .foto {
+
+                width: 90px;
+
+                border-width: 5px;
+            }
+
 
             .titulo h1 {
+
                 font-size: 30px;
+
+                white-space: nowrap;
             }
 
+
             .titulo p {
+
+                font-size: 17px;
+
+                white-space: nowrap;
+            }
+
+
+            .zona-central {
+
+                width: 100%;
+
+                max-width: 400px;
+            }
+
+
+            .boton-fecha {
+
+                width: 250px;
+
+                height: 55px;
+
                 font-size: 17px;
             }
 
+
+            .boton-fecha .texto-hover {
+
+                font-size: 17px;
+            }
+
+
             .frase-final {
-                font-size: 16px;
-                max-width: 300px;
+
+                font-size: 19px;
+
+                width: 90vw;
+            }
+
+
+            .cerrar-sesion {
+
+                top: 10px;
+
+                right: 10px;
+
+                font-size: 12px;
+
+                padding: 8px 12px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <button class="cerrar-sesion" onclick="cerrarSesion()">
+
+    <!-- =========================
+         BOTÓN CERRAR SESIÓN
+         ========================= -->
+
+    <button
+        class="cerrar-sesion"
+        onclick="cerrarSesion()"
+    >
         Cerrar sesión
     </button>
 
-    <div class="pagina-botones">
 
-        <div class="titulo">
-            <h1>FECHAS IMPORTANTES</h1>
-            <p>con la mejor mujer del mundo</p>
-        </div>
+    <main class="contenedor">
 
-        <div class="botones">
 
-            <!-- 1 -->
-            <a href="recuerdo-0509.html" class="boton-fecha boton-1">
-                05/09/2026
-            </a>
+        <!-- =========================
+             FOTOS IZQUIERDA
+             ========================= -->
 
-            <!-- 2 -->
-            <a href="recuerdo-2109.html" class="boton-fecha boton-2">
-                21/09/2026
-            </a>
+        <div class="fotos-laterales fotos-izquierda">
 
-            <!-- 3 -->
-            <a href="recuerdo-0510.html" class="boton-fecha boton-3">
-                05/10/2026
-            </a>
+            <img
+                class="foto foto-1"
+                src="/fotos/inicio/foto-prueba-1.jpg"
+                alt="Foto 1"
+            >
 
-            <!-- 4 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
+            <img
+                class="foto foto-2"
+                src="/fotos/inicio/foto-prueba-2.jpg"
+                alt="Foto 2"
+            >
 
-            <!-- 5 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
+            <img
+                class="foto foto-3"
+                src="/fotos/inicio/foto-prueba-3.jpg"
+                alt="Foto 3"
+            >
 
-            <!-- 6 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
-
-            <!-- 7 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
-
-            <!-- 8 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
-
-            <!-- 9 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
-
-            <!-- 10 -->
-            <div class="boton-fecha boton-vacio">
-                -----
-            </div>
+            <img
+                class="foto foto-4"
+                src="/fotos/inicio/foto-prueba-4.jpg"
+                alt="Foto 4"
+            >
 
         </div>
 
-        <div class="frase-final">
-            Porque cualquier momento se vuelve especial y hermoso cuando estoy contigo.
+
+        <!-- =========================
+             ZONA CENTRAL
+             ========================= -->
+
+        <section class="zona-central">
+
+
+            <div class="titulo">
+
+                <h1>
+                    FECHAS IMPORTANTES
+                </h1>
+
+                <p>
+                    con la mejor mujer del mundo
+                </p>
+
+            </div>
+
+
+            <div class="botones">
+
+
+                <!-- BOTÓN 1 -->
+
+                <a
+                    href="recuerdo-0509.html"
+                    class="boton-fecha boton-1"
+                >
+
+                    <span class="fecha">
+                        05/09/2026
+                    </span>
+
+                    <span class="texto-hover">
+                        Inicio de nuestra historia
+                    </span>
+
+                </a>
+
+
+                <!-- BOTÓN 2 -->
+
+                <a
+                    href="recuerdo-2109.html"
+                    class="boton-fecha boton-2"
+                >
+
+                    <span class="fecha">
+                        21/09/2026
+                    </span>
+
+                    <span class="texto-hover">
+                        Nuestra primera primavera
+                    </span>
+
+                </a>
+
+
+                <!-- BOTÓN 3 -->
+
+                <a
+                    href="recuerdo-0510.html"
+                    class="boton-fecha boton-3"
+                >
+
+                    <span class="fecha">
+                        05/10/2026
+                    </span>
+
+                    <span class="texto-hover">
+                        Primer aniversario
+                    </span>
+
+                </a>
+
+
+                <!-- BOTÓN 4 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 5 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 6 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 7 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 8 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 9 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+                <!-- BOTÓN 10 -->
+
+                <div class="boton-fecha boton-vacio">
+                    -----
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 FRASE FINAL
+                 ========================= -->
+
+            <div class="frase-final">
+
+                “Porque cualquier momento se vuelve especial
+                <br>
+                y hermoso cuando estoy contigo.”
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             FOTOS DERECHA
+             ========================= -->
+
+        <div class="fotos-laterales fotos-derecha">
+
+            <img
+                class="foto foto-1"
+                src="/fotos/inicio/foto-prueba-5.jpg"
+                alt="Foto 5"
+            >
+
+            <img
+                class="foto foto-2"
+                src="/fotos/inicio/foto-prueba-6.jpg"
+                alt="Foto 6"
+            >
+
+            <img
+                class="foto foto-3"
+                src="/fotos/inicio/foto-prueba-7.jpg"
+                alt="Foto 7"
+            >
+
+            <img
+                class="foto foto-4"
+                src="/fotos/inicio/foto-prueba-8.jpg"
+                alt="Foto 8"
+            >
+
         </div>
 
-    </div>
+
+    </main>
+
 
     <script>
-        async function cerrarSesion() {
-            try {
-                await fetch("/logout", {
-                    method: "POST"
-                });
 
-                window.location.href = "/";
-            } catch (error) {
-                console.error("Error al cerrar sesión:", error);
+        async function cerrarSesion() {
+
+            try {
+
+                await fetch(
+                    "/logout",
+                    {
+                        method: "POST"
+                    }
+                );
+
+            } finally {
+
+                window.location.href =
+                    "index.html";
             }
         }
+
     </script>
 
+
 </body>
+
 </html>
