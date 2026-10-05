@@ -1,0 +1,805 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>05/10/2026</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            background-image: url("imagenes/fondo-0510.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            overflow-x: hidden;
+        }
+
+
+        h1 {
+
+            margin-top: 35px;
+
+            margin-bottom: 10px;
+
+            color: white;
+
+            font-size: 42px;
+
+            font-weight: normal;
+
+            text-align: center;
+
+            text-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .subtitulo {
+
+            color: white;
+
+            font-size: 18px;
+
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+
+        .corazon {
+
+            position: relative;
+
+            width: 900px;
+
+            height: 700px;
+
+            margin-top: 10px;
+        }
+
+
+        .boton {
+
+            position: absolute;
+
+            width: 150px;
+
+            height: 200px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 10px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.35);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.2s ease;
+
+            transform-style: preserve-3d;
+
+            overflow: hidden;
+
+            user-select: none;
+        }
+
+
+        .boton:hover {
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .contenido-boton {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+
+            color: #222;
+
+            line-height: 1.25;
+
+            overflow: hidden;
+        }
+
+
+        .contenido-boton img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            display: block;
+        }
+
+
+        .texto-romantico {
+
+            font-size: 17px;
+
+            line-height: 1.35;
+
+            text-align: center;
+
+            padding: 8px;
+
+            color: #222;
+        }
+
+
+        /* POSICIONES */
+
+        .boton-1 {
+
+            top: 100px;
+
+            left: 370px;
+        }
+
+
+        .boton-2 {
+
+            top: 25px;
+
+            left: 150px;
+        }
+
+
+        .boton-3 {
+
+            top: 25px;
+
+            right: 150px;
+        }
+
+
+        .boton-4 {
+
+            top: 220px;
+
+            left: -20px;
+        }
+
+
+        .boton-5 {
+
+            top: 220px;
+
+            right: -20px;
+        }
+
+
+        .boton-6 {
+
+            top: 420px;
+
+            left: 150px;
+        }
+
+
+        .boton-7 {
+
+            top: 420px;
+
+            right: 150px;
+        }
+
+
+        .boton-8 {
+
+            top: 540px;
+
+            left: 370px;
+        }
+
+
+        /* BOTÓN VOLVER */
+
+        .volver {
+
+            margin-top: 10px;
+
+            margin-bottom: 30px;
+
+            padding: 12px 25px;
+
+            background:
+                rgba(255, 255, 255, 0.9);
+
+            color: #222;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.3);
+
+            transition: 0.2s;
+        }
+
+
+        .volver:hover {
+
+            background: white;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 700px) {
+
+            body {
+
+                background-attachment: scroll;
+            }
+
+
+            h1 {
+
+                margin-top: 25px;
+
+                font-size: 32px;
+            }
+
+
+            .subtitulo {
+
+                font-size: 16px;
+
+                margin-left: 20px;
+
+                margin-right: 20px;
+            }
+
+
+            .corazon {
+
+                width: 100%;
+
+                height: auto;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 20px;
+
+                margin-top: 20px;
+
+                padding-bottom: 20px;
+            }
+
+
+            .boton {
+
+                position: relative;
+
+                top: auto !important;
+
+                left: auto !important;
+
+                right: auto !important;
+
+                width: 150px;
+
+                height: 200px;
+
+                flex-shrink: 0;
+            }
+
+
+            .contenido-boton {
+
+                font-size: 21px;
+            }
+
+
+            .texto-romantico {
+
+                font-size: 16px;
+
+                line-height: 1.3;
+            }
+
+
+            .volver {
+
+                margin-top: 10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>
+        05/10/2026
+    </h1>
+
+
+    <div class="subtitulo">
+
+        "Cada momento contigo es un recuerdo que quiero guardar"
+
+    </div>
+
+
+    <div class="corazon">
+
+
+        <!-- BOTÓN 1 -->
+
+        <div
+            class="boton boton-1"
+            data-estado="0"
+            data-giros="0"
+            data-numero="1"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen1.jpg"
+                    alt="Imagen 1"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 2 -->
+
+        <div
+            class="boton boton-2"
+            data-estado="0"
+            data-giros="0"
+            data-numero="2"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen2.jpg"
+                    alt="Imagen 2"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 3 -->
+
+        <div
+            class="boton boton-3"
+            data-estado="0"
+            data-giros="0"
+            data-numero="3"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen3.jpg"
+                    alt="Imagen 3"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 4 -->
+
+        <div
+            class="boton boton-4"
+            data-estado="0"
+            data-giros="0"
+            data-numero="4"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen4.jpg"
+                    alt="Imagen 4"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 5 -->
+
+        <div
+            class="boton boton-5"
+            data-estado="0"
+            data-giros="0"
+            data-numero="5"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen5.jpg"
+                    alt="Imagen 5"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 6 -->
+
+        <div
+            class="boton boton-6"
+            data-estado="0"
+            data-giros="0"
+            data-numero="6"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen6.jpg"
+                    alt="Imagen 6"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 7 -->
+
+        <div
+            class="boton boton-7"
+            data-estado="0"
+            data-giros="0"
+            data-numero="7"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen7.jpg"
+                    alt="Imagen 7"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTÓN 8 -->
+
+        <div
+            class="boton boton-8"
+            data-estado="0"
+            data-giros="0"
+            data-numero="8"
+            onclick="cambiarEstado(this)"
+        >
+
+            <div class="contenido-boton">
+
+                <img
+                    src="imagenes/imagen8.jpg"
+                    alt="Imagen 8"
+                >
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <a
+        href="inicio.html"
+        class="volver"
+    >
+        Volver
+    </a>
+
+
+    <script>
+
+
+        /*
+         * TEXTOS DE CADA BOTÓN
+         */
+
+        const textos = [
+
+            "Hace un mes comenzó nuestro camino juntos, y caminarlo contigo me llena de ilusion.",
+
+            "Tu sonrisa es la mas hermosa del mundo, la unica que calma mi corazon .",
+
+            "En tu ser encontre la unica persona que puede saber todo de mi.",
+
+            "No existe un recuerdo favorito pues todos son los mejores si estoy a tu lado.",
+
+            "Admiro tu forma de ver la vida, tu ternura y la fuerza que me inspiras.",
+
+            "Prometo cuidar este amor, respetarlo y hacerlo crecer cada día. Porque tu eres la unica persona con la que quiero pasar el resto de mi vida",
+
+            "Nuestro futuro sera siempre brillante, pues siempre estaremos juntos",
+
+            "El amor que nos tenemos es el mejor porque se fortalece con cada momento compartido y me hace sentir que contigo todo tiene sentido. "
+
+        ];
+
+
+        /*
+         * CAMBIAR ESTADO DEL BOTÓN
+         *
+         * Estado 0:
+         * Imagen local
+         *
+         * Estado 1:
+         * Texto
+         *
+         * Estado 2:
+         * Foto desde R2
+         *
+         * Después vuelve al Estado 0.
+         */
+
+        function cambiarEstado(boton) {
+
+
+            /*
+             * Evita varios clics durante el giro.
+             */
+
+            if (boton.dataset.animando === "true") {
+
+                return;
+
+            }
+
+
+            boton.dataset.animando = "true";
+
+
+            /*
+             * Suma una vuelta completa
+             * en cada clic.
+             */
+
+            let giros =
+                Number(boton.dataset.giros);
+
+            giros++;
+
+            boton.dataset.giros =
+                giros;
+
+
+            boton.style.transform =
+                `rotateY(${giros * 360}deg)`;
+
+
+            /*
+             * Cambiar al siguiente estado.
+             */
+
+            let estado =
+                Number(boton.dataset.estado);
+
+            estado++;
+
+
+            if (estado > 2) {
+
+                estado = 0;
+
+            }
+
+
+            boton.dataset.estado =
+                estado;
+
+
+            /*
+             * Obtener el contenido
+             * del botón.
+             */
+
+            const contenido =
+                boton.querySelector(
+                    ".contenido-boton"
+                );
+
+
+            /*
+             * Saber qué número de botón
+             * estamos utilizando.
+             */
+
+            const numero =
+                Number(boton.dataset.numero);
+
+
+            /*
+             * =========================
+             * ESTADO 0
+             * IMAGEN LOCAL
+             * =========================
+             */
+
+            if (estado === 0) {
+
+
+                contenido.innerHTML = `
+
+                    <img
+                        src="imagenes/imagen${numero}.jpg"
+                        alt="Imagen ${numero}"
+                    >
+
+                `;
+
+            }
+
+
+            /*
+             * =========================
+             * ESTADO 1
+             * TEXTO
+             * =========================
+             */
+
+            else if (estado === 1) {
+
+
+                contenido.innerHTML = `
+
+                    <div class="texto-romantico">
+
+                        ${textos[numero - 1]}
+
+                    </div>
+
+                `;
+
+            }
+
+
+            /*
+             * =========================
+             * ESTADO 2
+             * FOTO DESDE R2
+             * =========================
+             */
+
+            else if (estado === 2) {
+
+
+                contenido.innerHTML = `
+
+                    <img
+                        src="/fotos/05-10-2026/foto${numero}.jpg"
+                        alt="Foto ${numero}"
+                    >
+
+                `;
+
+            }
+
+
+            /*
+             * Permitir otro clic después
+             * de terminar el giro.
+             */
+
+            setTimeout(() => {
+
+                boton.dataset.animando =
+                    "false";
+
+            }, 350);
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
