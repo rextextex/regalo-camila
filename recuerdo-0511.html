@@ -1,805 +1,319 @@
-```html
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Momentos bellos</title>
 
-    <title>05/10/2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-
         body {
-
-            margin: 0;
-
             min-height: 100vh;
-
-            background-image: url("imagenes/fondo-0510.jpg");
-
-            background-size: cover;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-
-            background-attachment: fixed;
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #fff4f2, #f9e3e5, #fff0ed);
+            font-family: 'Cormorant Garamond', serif;
+            color: #593b42;
+            padding: 40px 20px;
         }
 
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+        }
 
-        h1 {
+        /* TÍTULO PRINCIPAL */
 
-            margin-top: 35px;
+        .titulo-principal {
+            text-align: center;
+            margin-bottom: 65px;
+        }
 
-            margin-bottom: 10px;
-
-            color: white;
-
-            font-size: 42px;
-
+        .titulo-principal h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 75px;
             font-weight: normal;
-
-            text-align: center;
-
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.6);
+            color: #a64d65;
         }
 
-
-        .subtitulo {
-
-            color: white;
-
-            font-size: 18px;
-
-            text-align: center;
-
-            margin-bottom: 20px;
-
-            text-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.6);
-        }
-
-
-        .corazon {
-
-            position: relative;
-
-            width: 900px;
-
-            height: 700px;
-
-            margin-top: 10px;
-        }
-
-
-        .boton {
-
-            position: absolute;
-
-            width: 150px;
-
-            height: 200px;
-
-            background: white;
-
-            border-radius: 12px;
-
-            cursor: pointer;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 10px;
-
-            box-shadow:
-                0 8px 20px rgba(0, 0, 0, 0.35);
-
-            transition:
-                transform 0.35s ease,
-                box-shadow 0.2s ease;
-
-            transform-style: preserve-3d;
-
-            overflow: hidden;
-
-            user-select: none;
-        }
-
-
-        .boton:hover {
-
-            box-shadow:
-                0 12px 25px rgba(0, 0, 0, 0.45);
-        }
-
-
-        .contenido-boton {
-
-            width: 100%;
-
-            height: 100%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
+        .titulo-principal p {
             font-size: 22px;
-
-            color: #222;
-
-            line-height: 1.25;
-
-            overflow: hidden;
+            margin-top: 8px;
+            color: #80545e;
         }
 
+        /* SECCIONES DE LOS RECUERDOS */
 
-        .contenido-boton img {
+        .momento {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            margin-bottom: 65px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.65);
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(120, 65, 80, 0.10);
+        }
 
-            width: 100%;
+        .texto-momento {
+            flex: 1;
+            padding: 15px;
+        }
 
-            height: 100%;
+        .texto-momento h2 {
+            font-size: 34px;
+            color: #a64d65;
+            margin-bottom: 18px;
+        }
 
-            object-fit: cover;
+        .texto-momento p {
+            font-size: 23px;
+            line-height: 1.6;
+            text-align: justify;
+        }
 
-            border-radius: 8px;
+        .foto-momento {
+            flex: 1;
+            min-width: 0;
+        }
 
+        .foto-momento img {
             display: block;
+            width: 100%;
+            max-height: 430px;
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
         }
 
+        /* SEGUNDA SALIDA: FOTO A LA IZQUIERDA */
 
-        .texto-romantico {
+        .momento.segundo {
+            flex-direction: row;
+        }
 
-            font-size: 17px;
+        /* VIDEO DESTACADO */
 
-            line-height: 1.35;
-
+        .destacado {
             text-align: center;
-
-            padding: 8px;
-
-            color: #222;
+            margin-top: 85px;
+            margin-bottom: 50px;
         }
 
-
-        /* POSICIONES */
-
-        .boton-1 {
-
-            top: 100px;
-
-            left: 370px;
+        .destacado h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 58px;
+            font-weight: normal;
+            color: #a64d65;
+            margin-bottom: 25px;
         }
 
-
-        .boton-2 {
-
-            top: 25px;
-
-            left: 150px;
+        .video-contenedor {
+            max-width: 850px;
+            margin: auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(120, 65, 80, 0.15);
         }
 
-
-        .boton-3 {
-
-            top: 25px;
-
-            right: 150px;
+        .video-contenedor video {
+            display: block;
+            width: 100%;
+            max-height: 500px;
+            border-radius: 12px;
+            background: #000;
         }
 
-
-        .boton-4 {
-
-            top: 220px;
-
-            left: -20px;
-        }
-
-
-        .boton-5 {
-
-            top: 220px;
-
-            right: -20px;
-        }
-
-
-        .boton-6 {
-
-            top: 420px;
-
-            left: 150px;
-        }
-
-
-        .boton-7 {
-
-            top: 420px;
-
-            right: 150px;
-        }
-
-
-        .boton-8 {
-
-            top: 540px;
-
-            left: 370px;
-        }
-
-
-        /* BOTÓN VOLVER */
+        /* BOTÓN PARA VOLVER */
 
         .volver {
-
-            margin-top: 10px;
-
-            margin-bottom: 30px;
-
-            padding: 12px 25px;
-
-            background:
-                rgba(255, 255, 255, 0.9);
-
-            color: #222;
-
+            display: block;
+            width: fit-content;
+            margin: 60px auto 20px;
+            padding: 12px 35px;
+            background: #a64d65;
+            color: white;
             text-decoration: none;
-
-            border-radius: 8px;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 15px;
-
-            box-shadow:
-                0 5px 15px rgba(0, 0, 0, 0.3);
-
-            transition: 0.2s;
+            font-size: 21px;
+            border-radius: 30px;
+            transition: 0.3s;
         }
-
 
         .volver:hover {
-
-            background: white;
-
-            transform: translateY(-2px);
+            background: #80384e;
+            transform: scale(1.05);
         }
 
-
-        /* CELULAR */
+        /* ADAPTACIÓN A CELULARES */
 
         @media (max-width: 700px) {
-
             body {
-
-                background-attachment: scroll;
+                padding: 25px 12px;
             }
 
-
-            h1 {
-
-                margin-top: 25px;
-
-                font-size: 32px;
+            .titulo-principal {
+                margin-bottom: 35px;
             }
 
-
-            .subtitulo {
-
-                font-size: 16px;
-
-                margin-left: 20px;
-
-                margin-right: 20px;
+            .titulo-principal h1 {
+                font-size: 55px;
             }
 
+            .titulo-principal p {
+                font-size: 19px;
+            }
 
-            .corazon {
-
-                width: 100%;
-
-                height: auto;
-
-                display: flex;
-
+            .momento,
+            .momento.segundo {
                 flex-direction: column;
-
-                align-items: center;
-
                 gap: 20px;
-
-                margin-top: 20px;
-
-                padding-bottom: 20px;
+                padding: 15px;
+                margin-bottom: 35px;
             }
 
-
-            .boton {
-
-                position: relative;
-
-                top: auto !important;
-
-                left: auto !important;
-
-                right: auto !important;
-
-                width: 150px;
-
-                height: 200px;
-
-                flex-shrink: 0;
+            .texto-momento {
+                width: 100%;
+                padding: 10px;
             }
 
-
-            .contenido-boton {
-
-                font-size: 21px;
+            .texto-momento h2 {
+                font-size: 29px;
+                text-align: center;
             }
 
-
-            .texto-romantico {
-
-                font-size: 16px;
-
-                line-height: 1.3;
+            .texto-momento p {
+                font-size: 20px;
             }
 
-
-            .volver {
-
-                margin-top: 10px;
+            .foto-momento {
+                width: 100%;
             }
 
+            .foto-momento img {
+                max-height: 350px;
+            }
+
+            .destacado {
+                margin-top: 55px;
+            }
+
+            .destacado h2 {
+                font-size: 48px;
+            }
+
+            .video-contenedor {
+                padding: 8px;
+            }
         }
-
     </style>
-
 </head>
-
 
 <body>
 
+    <main class="contenedor">
 
-    <h1>
-        05/10/2026
-    </h1>
+        <!-- TÍTULO PRINCIPAL -->
 
-
-    <div class="subtitulo">
-
-        "Cada momento contigo es un recuerdo que quiero guardar"
-
-    </div>
+        <header class="titulo-principal">
+            <h1>Momentos bellos</h1>
+            <p>Recuerdos que siempre llevaré en mi corazón</p>
+        </header>
 
 
-    <div class="corazon">
+        <!-- PRIMERA SALIDA: TEXTO IZQUIERDA, FOTO DERECHA -->
 
+        <section class="momento">
 
-        <!-- BOTÓN 1 -->
+            <div class="texto-momento">
+                <h2>Nuestra primera salida</h2>
+                <p>
+                    Tono UNI.
 
-        <div
-            class="boton boton-1"
-            data-estado="0"
-            data-giros="0"
-            data-numero="1"
-            onclick="cambiarEstado(this)"
-        >
-
-            <div class="contenido-boton">
-
-                <img
-                    src="imagenes/imagen1.jpg"
-                    alt="Imagen 1"
-                >
+                    Amor, ese día lo recuerdo con muchísimo cariño. Antes de ir a la fiesta fuimos a comer nuestro pollito, y después nos compramos unos Maiks y unos Fluor Loko que al final ni terminamos y acabamos regalándole a un desconocido jajaja.
+                    <br><br>
+                    Cuando estuvimos en el parque compartimos momentos muy lindos entre besos, abrazos y caricias que guardo con mucho cariño. Luego, cuando viste cómo toman en CEIIS, fue una experiencia un poco XD jajaja.
+                    <br><br>
+                    Ya en la fiesta, lo que más disfruté fue poder bailar tranquilo contigo. No tienes idea de lo feliz que me hacía estar a tu lado, compartiendo ese momento contigo. Incluso cuando regresamos a tu casa, seguía sintiéndome muy feliz y agradecido por todo lo vivido ese día.
+                    <br><br>
+                    Aunque tuve un poco de estrés por lo de las pulseras, estar contigo hizo que todo fuera mucho más llevadero. Tú tienes esa capacidad de darme tranquilidad y hacerme sentir en paz. Eres la calma de mi corazón, amor, y ese día me recordaste una vez más lo feliz que soy cuando estoy contigo. ❤️
+                </p>
 
             </div>
 
-        </div>
-
-
-        <!-- BOTÓN 2 -->
-
-        <div
-            class="boton boton-2"
-            data-estado="0"
-            data-giros="0"
-            data-numero="2"
-            onclick="cambiarEstado(this)"
-        >
-
-            <div class="contenido-boton">
-
+            <div class="foto-momento">
                 <img
-                    src="imagenes/imagen2.jpg"
-                    alt="Imagen 2"
-                >
-
+                    src="/fotos/05-11-2026/foto1.jpg"
+                    alt="Fotografía de nuestra primera salida">
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- BOTÓN 3 -->
+        <!-- SEGUNDA SALIDA: FOTO IZQUIERDA, TEXTO DERECHA -->
 
-        <div
-            class="boton boton-3"
-            data-estado="0"
-            data-giros="0"
-            data-numero="3"
-            onclick="cambiarEstado(this)"
-        >
+        <section class="momento segundo">
 
-            <div class="contenido-boton">
-
+            <div class="foto-momento">
                 <img
-                    src="imagenes/imagen3.jpg"
-                    alt="Imagen 3"
-                >
-
+                    src="/fotos/05-11-2026/foto2.jpg"
+                    alt="Fotografía de nuestra segunda salida">
             </div>
 
-        </div>
-
-
-        <!-- BOTÓN 4 -->
-
-        <div
-            class="boton boton-4"
-            data-estado="0"
-            data-giros="0"
-            data-numero="4"
-            onclick="cambiarEstado(this)"
-        >
-
-            <div class="contenido-boton">
-
-                <img
-                    src="imagenes/imagen4.jpg"
-                    alt="Imagen 4"
-                >
-
+            <div class="texto-momento">
+                <h2>Nuestra segunda salida</h2>
+                    <p>
+                        <strong>Previa de Halloween 🎃❤️</strong>
+                        <br><br>
+                        Fue un día hermoso. En el parque tuve la oportunidad de conocer un poco más a esa Gaby atrevida y me gustó. Y cómo olvidar a aquella niña que prácticamente nos dio su visto bueno; fue un momento tan inesperado y gracioso que siempre lo recordaré con una sonrisa.
+                        <br><br>
+                        Después fuimos al Circuito Mágico del Agua. Aunque una de las atracciones no estaba funcionando, eso no importó demasiado, porque lo que realmente hizo especial ese momento fue poder compartirlo contigo. Incluso la foto que nos tomamos quedó como un lindo recuerdo de ese día.
+                        <br><br>
+                        Más tarde, en la Feria del Terror, conocí un lado más de ti cuando me hiciste probar productos coreanos. Fue una experiencia divertida y diferente que disfruté mucho. Me encanta compartir nuevas experiencias contigo, porque siempre logras convertir cada momento en algo especial.
+                        <br><br>
+                        La verdad es que no son los lugares los que hacen que esos recuerdos sean hermosos, sino tu compañía. Porque cuando estoy a tu lado, cualquier momento se vuelve único, inolvidable y lleno de felicidad. ❤️✨
+                    </p>
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- BOTÓN 5 -->
+        <!-- VIDEO DESTACADO -->
 
-        <div
-            class="boton boton-5"
-            data-estado="0"
-            data-giros="0"
-            data-numero="5"
-            onclick="cambiarEstado(this)"
-        >
+        <section class="destacado">
 
-            <div class="contenido-boton">
+            <h2>El momento destacado</h2>
 
-                <img
-                    src="imagenes/imagen5.jpg"
-                    alt="Imagen 5"
-                >
+            <div class="video-contenedor">
+                <video controls playsinline preload="metadata">
+                    <source
+                        src="/fotos/05-11-2026/video.mp4"
+                        type="video/mp4">
 
+                    Tu navegador no puede reproducir este video.
+                </video>
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- BOTÓN 6 -->
+        <!-- VOLVER AL INICIO -->
 
-        <div
-            class="boton boton-6"
-            data-estado="0"
-            data-giros="0"
-            data-numero="6"
-            onclick="cambiarEstado(this)"
-        >
+        <a href="inicio.html" class="volver">
+            Volver
+        </a>
 
-            <div class="contenido-boton">
-
-                <img
-                    src="imagenes/imagen6.jpg"
-                    alt="Imagen 6"
-                >
-
-            </div>
-
-        </div>
-
-
-        <!-- BOTÓN 7 -->
-
-        <div
-            class="boton boton-7"
-            data-estado="0"
-            data-giros="0"
-            data-numero="7"
-            onclick="cambiarEstado(this)"
-        >
-
-            <div class="contenido-boton">
-
-                <img
-                    src="imagenes/imagen7.jpg"
-                    alt="Imagen 7"
-                >
-
-            </div>
-
-        </div>
-
-
-        <!-- BOTÓN 8 -->
-
-        <div
-            class="boton boton-8"
-            data-estado="0"
-            data-giros="0"
-            data-numero="8"
-            onclick="cambiarEstado(this)"
-        >
-
-            <div class="contenido-boton">
-
-                <img
-                    src="imagenes/imagen8.jpg"
-                    alt="Imagen 8"
-                >
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <a
-        href="inicio.html"
-        class="volver"
-    >
-        Volver
-    </a>
-
-
-    <script>
-
-
-        /*
-         * TEXTOS DE CADA BOTÓN
-         */
-
-        const textos = [
-
-            "Hace un mes comenzó nuestro camino juntos, y caminarlo contigo me llena de ilusion.",
-
-            "Tu sonrisa es la mas hermosa del mundo, la unica que calma mi corazon .",
-
-            "En tu ser encontre la unica persona que puede saber todo de mi.",
-
-            "No existe un recuerdo favorito pues todos son los mejores si estoy a tu lado.",
-
-            "Admiro tu forma de ver la vida, tu ternura y la fuerza que me inspiras.",
-
-            "Prometo cuidar este amor, respetarlo y hacerlo crecer cada día.",
-
-            "Nuestro futuro sera siempre brillante, pues siempre estaremos juntos.",
-
-            "El amor que nos tenemos es el mejor porque se fortalece con cada momento compartido. "
-
-        ];
-
-
-        /*
-         * CAMBIAR ESTADO DEL BOTÓN
-         *
-         * Estado 0:
-         * Imagen local
-         *
-         * Estado 1:
-         * Texto
-         *
-         * Estado 2:
-         * Foto desde R2
-         *
-         * Después vuelve al Estado 0.
-         */
-
-        function cambiarEstado(boton) {
-
-
-            /*
-             * Evita varios clics durante el giro.
-             */
-
-            if (boton.dataset.animando === "true") {
-
-                return;
-
-            }
-
-
-            boton.dataset.animando = "true";
-
-
-            /*
-             * Suma una vuelta completa
-             * en cada clic.
-             */
-
-            let giros =
-                Number(boton.dataset.giros);
-
-            giros++;
-
-            boton.dataset.giros =
-                giros;
-
-
-            boton.style.transform =
-                `rotateY(${giros * 360}deg)`;
-
-
-            /*
-             * Cambiar al siguiente estado.
-             */
-
-            let estado =
-                Number(boton.dataset.estado);
-
-            estado++;
-
-
-            if (estado > 2) {
-
-                estado = 0;
-
-            }
-
-
-            boton.dataset.estado =
-                estado;
-
-
-            /*
-             * Obtener el contenido
-             * del botón.
-             */
-
-            const contenido =
-                boton.querySelector(
-                    ".contenido-boton"
-                );
-
-
-            /*
-             * Saber qué número de botón
-             * estamos utilizando.
-             */
-
-            const numero =
-                Number(boton.dataset.numero);
-
-
-            /*
-             * =========================
-             * ESTADO 0
-             * IMAGEN LOCAL
-             * =========================
-             */
-
-            if (estado === 0) {
-
-
-                contenido.innerHTML = `
-
-                    <img
-                        src="imagenes/imagen${numero}.jpg"
-                        alt="Imagen ${numero}"
-                    >
-
-                `;
-
-            }
-
-
-            /*
-             * =========================
-             * ESTADO 1
-             * TEXTO
-             * =========================
-             */
-
-            else if (estado === 1) {
-
-
-                contenido.innerHTML = `
-
-                    <div class="texto-romantico">
-
-                        ${textos[numero - 1]}
-
-                    </div>
-
-                `;
-
-            }
-
-
-            /*
-             * =========================
-             * ESTADO 2
-             * FOTO DESDE R2
-             * =========================
-             */
-
-            else if (estado === 2) {
-
-
-                contenido.innerHTML = `
-
-                    <img
-                        src="/fotos/05-10-2026/foto${numero}.jpg"
-                        alt="Foto ${numero}"
-                    >
-
-                `;
-
-            }
-
-
-            /*
-             * Permitir otro clic después
-             * de terminar el giro.
-             */
-
-            setTimeout(() => {
-
-                boton.dataset.animando =
-                    "false";
-
-            }, 350);
-
-        }
-
-
-    </script>
-
+    </main>
 
 </body>
-
 </html>
-```
